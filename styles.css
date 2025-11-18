@@ -1,19 +1,26 @@
-body {
+/* Reset */
+body, html {
     margin: 0;
     padding: 0;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
 
-.image-container {
-    width: 90%;
-    max-width: 1000px;
+/* Black background */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-.image-container img {
+/* Simple header */
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: #111;
+    border-bottom: 2px solid #222;
+}
+
+/* Hero Image */
+.hero-image {
     width: 100%;
     height: auto;
     display: block;
