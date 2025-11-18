@@ -1,27 +1,21 @@
-/* Reset */
-body, html {
+body {
     margin: 0;
     padding: 0;
-}
-
-/* Black background */
-body {
     background-color: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Simple header */
-header {
-    text-align: center;
-    padding: 20px 0;
-    background: #111;
-    border-bottom: 2px solid #222;
+.image-container {
+    width: 90%;
+    max-width: 900px;
 }
 
-/* Hero Image */
-.hero-image {
+.image-container img {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 6px;
 }
