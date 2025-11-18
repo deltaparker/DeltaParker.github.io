@@ -1,43 +1,42 @@
-/* GLOBAL */
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0d0d0d;
-    color: #eee;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zombies</title>
 
-/* NAV BAR */
-.nav {
-    width: 100%;
-    background: #000;
-    padding: 15px 0;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    border-bottom: 2px solid #111;
-}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-.nav-inner {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        #zombie-img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <img id="zombie-img" src="" />
 
-.nav a {
-    color: #ccc;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    <script>
+        const images = [
+            "mathieu-stern-ucqhzAtILQw-unsplash.jpg",
+            "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
+            "nathan-wright-igpwuxZofgo-unsplash.jpg"
+        ];
 
-.nav a:hover {
-    color: #6aff6a;
-}
-
-/* HERO SECTION */
-.hero {
-    height: 90vh;
-    width: 100%;
+        // pick random image
+        const randomImage = images[Math.floor(Math.random() * images.length)];
+        document.getElementById("zombie-img").src = randomImage;
+    </script>
+</body>
+</html>
