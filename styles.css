@@ -1,42 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zombies</title>
+:root{
+  --bg:#0b0b0b;
+  --accent:#ff3b3b;
+  --muted:#9aa09a;
+  --max-width:1100px;
+  --pad:24px;
+  --hero-url: url(""); /* set by JS */
+}
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color:#e9e9e9;
+  line-height:1.6;
+}
 
-        #zombie-img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
-        }
-    </style>
-</head>
-<body>
-    <img id="zombie-img" src="" />
+/* NAV */
+.nav{background:#000;border-bottom:1px solid #222;position:fixed;top:0;left:0;right:0;z-index:50}
+.nav-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{color:var(--accent);font-weight:700;font-size:20px}
+nav a{color:#ddd;margin-left:16px;text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
 
-    <script>
-        const images = [
-            "mathieu-stern-ucqhzAtILQw-unsplash.jpg",
-            "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
-            "nathan-wright-igpwuxZofgo-unsplash.jpg"
-        ];
+/* HERO */
+.hero{
+  height:80vh;
+  display:flex;
+  align-items:flex-end;
+  padding:120px 24px 60px;
+  position:relative;
+  background-image: var(--hero-url);
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  transition:background-image 0.6s ease;
+}
 
-        // pick random image
-        const randomImage = images[Math.floor(Math.random() * images.length)];
-        document.getElementById("zombie-img").src = randomImage;
-    </script>
-</body>
-</html>
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.8));
+  z-index:1;
+}
+
+.hero-content{position:relative;z-index:2;max-width:800px}
+.hero h1{font-size:3.2rem;color:var(--accent);text-shadow:0 0 12px rgba(255,60,60,0.25);margin:0 0 10px}
+.hero p{color:#ddd;margin:0 0 18px}
+
+/* BUTTON */
+.button{display:inline-block;padding:12px 22px;border-radius:6px;background:var(--accent);color:#000;font-weight:800;text-decoration:none}
+.button:hover{filter:brightness(1.08)}
+
+/* CONTENT SECTIONS */
+main{max-width:var(--max-width);margin:40px auto;padding:0 20px}
+section{background:#111;padding:18px;border-radius:8px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.02)}
+h2{color:var(--accent);margin:0 0 8px}
+
+/* FOOTER */
+footer{text-align:center;padding:26px;color:#9a9a9a;background:#050505;margin-top:40px}
+
+/* MOBILE */
+@media (max-width:720px){
+  .hero{height:60vh;padding:100px 18px 40px}
+  .hero h1{font-size:2.2rem}
+}
