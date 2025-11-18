@@ -1,19 +1,76 @@
-<script>
-  // === EXACT FILENAMES AS THEY EXIST ON GITHUB ===
-  const images = [
-    "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
-    "mathieu-stern-ucqhZAtILQw-unsplash.jpg",
-    "nathan-wright-igpwuxZofgo-unsplash.jpg"
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Parker Productions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-  const hero = document.querySelector('.hero');
+<body>
 
-  // Randomly pick one image
-  const selected = images[Math.floor(Math.random() * images.length)];
+    <!-- ================= NAVIGATION ================= -->
+    <nav class="navbar">
+        <div class="logo">Delta Parker Productions</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+            <li><a href="devblog.html">Dev Blog</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
 
-  // Debug log (you can remove later)
-  console.log("Hero background image:", selected);
+    <!-- ================= HERO SECTION ================= -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Welcome to the Apocalypse</h1>
+            <p>Building zombie worlds one mutation at a time.</p>
+            <a href="games.html" class="btn">View Our Games</a>
+        </div>
+    </header>
 
-  // Apply image to CSS variable
-  hero.style.setProperty('--hero-url', `url("${selected}")`);
-</script>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="content">
+        <section>
+            <h2>Zombie / Apocalyptic Game Studio</h2>
+            <p>
+                We create stylized, chaotic, undead-filled worlds.  
+                Our mission: craft indie games with personality, style, and lots of zombies.
+            </p>
+        </section>
+
+        <section class="image-row">
+            <img src="alex-lo-storto-BZIaA-uaqXs-unsplash.jpg" alt="zombie city">
+            <img src="mathieu-stern-ucqhZAtILQw-unsplash.jpg" alt="zombie neon">
+            <img src="nathan-wright-igpwuxZofgo-unsplash.jpg" alt="creature">
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        <p>© 2025 Delta Parker Productions — All Rights Reserved</p>
+    </footer>
+
+
+    <!-- ================= HERO IMAGE SCRIPT ================= -->
+    <script>
+        const images = [
+            "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
+            "mathieu-stern-ucqhZAtILQw-unsplash.jpg",
+            "nathan-wright-igpwuxZofgo-unsplash.jpg"
+        ];
+
+        const hero = document.querySelector('.hero');
+
+        const selected = images[Math.floor(Math.random() * images.length)];
+
+        hero.style.backgroundImage = `url('${selected}')`;
+    </script>
+
+</body>
+</html>
