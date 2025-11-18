@@ -1,102 +1,116 @@
-/* GLOBAL */
+/* ================= GLOBAL ================= */
 body {
     margin: 0;
+    padding: 0;
     background: #000;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
 }
 
-/* NAVBAR */
-.navbar {
+/* ================= HEADER ================= */
+.site-header {
+    width: 100%;
     background: #000;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 12px 20px;
     border-bottom: 3px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: red;
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff0000;
+    text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
-.navbar nav a {
-    color: #ddd;
+.nav {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.nav a {
+    color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-size: 16px;
-    transition: 0.3s;
+    font-size: 18px;
+    transition: 0.3s ease;
 }
 
-.navbar nav a:hover {
+.nav a:hover {
     color: red;
+    text-shadow: 0 0 10px red;
 }
 
-/* DONATE BUTTON */
+/* ================= DONATE BUTTONS ================= */
 .donate-btn {
     padding: 8px 16px;
-    border-radius: 6px;
-    background: red;
-    color: white !important;
+    border-radius: 5px;
     font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.paypal {
+    background: #FF0000;
     box-shadow: 0 0 10px red;
-    animation: pulse 1.7s infinite;
+    animation: pulse 1.5s infinite;
 }
 
+.cashapp {
+    background: #00c244;
+    box-shadow: 0 0 10px #00ff55;
+    animation: pulse-green 1.5s infinite;
+}
+
+.paypal:hover { transform: scale(1.1); }
+.cashapp:hover { transform: scale(1.1); }
+
+/* Red Pulse */
 @keyframes pulse {
-    0% { box-shadow: 0 0 5px red; }
+    0% { box-shadow: 0 0 10px red; }
     50% { box-shadow: 0 0 20px red; }
-    100% { box-shadow: 0 0 5px red; }
+    100% { box-shadow: 0 0 10px red; }
 }
 
-/* HERO SECTION */
+/* Green Pulse */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 10px #00ff55; }
+    50% { box-shadow: 0 0 20px #00ff99; }
+    100% { box-shadow: 0 0 10px #00ff55; }
+}
+
+/* ================= HERO SECTION ================= */
 .hero {
     position: relative;
     width: 100%;
-    height: 100vh;
     overflow: hidden;
+    text-align: center;
 }
 
 .hero-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;
 }
 
 .hero-text {
     position: absolute;
-    bottom: 80px;
+    top: 35%;
     left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    text-shadow: 0 0 15px #000;
+    transform: translate(-50%, -50%);
 }
 
 .hero-text h1 {
     font-size: 50px;
-    color: red;
-    margin: 0;
+    font-weight: 900;
+    text-shadow: 0 0 15px black;
 }
 
 .hero-text p {
     font-size: 22px;
-    margin-top: 10px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 32px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .navbar nav a {
-        margin-left: 10px;
-        font-size: 14px;
-    }
+    text-shadow: 0 0 10px black;
 }
