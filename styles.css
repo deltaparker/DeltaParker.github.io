@@ -1,145 +1,31 @@
-/* -------- Global Zombie / Apocalyptic Theme -------- */
+/* ---------------------------------------------------------
+   GLOBAL APPEARANCE — FULL APOCALYPTIC THEME
+--------------------------------------------------------- */
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0b0b0d; /* deep black */
-    color: #e0e0e0; /* light text */
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #ccc;
+    overflow-x: hidden;
+
+    /* Grunge + gradient base */
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 80%),
+                url('https://i.imgur.com/WnH3o4q.png'); /* grunge texture */
+    background-size: cover;
 }
 
-/* Subtle film-grain texture */
+/* ---------------------------------------------------------
+   FOG ANIMATION
+--------------------------------------------------------- */
+
 body::before {
     content: "";
     position: fixed;
     top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4+fP7HwAFgwJ/lXK4WAAAAABJRU5ErkJggg==");
-    opacity: 0.08;
-    z-index: 1;
-}
+    width: 120%;
+    height: 120%;
+    background: url('htt
 
-/* -------- Navigation Bar -------- */
-nav {
-    background: #111114;
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #c21807;
-}
-
-nav a {
-    color: #f3f3f3;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #c21807;
-    text-shadow: 0 0 5px #c21807;
-}
-
-/* -------- Hero Section -------- */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&w=1600&q=60');
-    background-size: cover;
-    background-position: center;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 60px;
-    color: white;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    text-shadow: 0 0 15px #c21807;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    max-width: 600px;
-    opacity: 0.9;
-}
-
-.hero .btn {
-    margin-top: 20px;
-    background: #c21807;
-    padding: 12px 25px;
-    border-radius: 4px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.hero .btn:hover {
-    background: #e22313;
-    box-shadow: 0 0 10px #c21807;
-}
-
-/* -------- Section Styles -------- */
-section {
-    padding: 50px 10%;
-}
-
-h2 {
-    border-left: 5px solid #c21807;
-    padding-left: 10px;
-    margin-bottom: 20px;
-}
-
-/* -------- Cards (Games / Blog / Store) -------- */
-.card {
-    background: #141418;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid #222;
-    transition: 0.2s;
-}
-
-.card:hover {
-    border-color: #c21807;
-    box-shadow: 0 0 15px #c21807;
-}
-
-/* -------- Buttons -------- */
-.btn {
-    background: #c21807;
-    padding: 10px 20px;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: #e22313;
-    box-shadow: 0 0 10px #c21807;
-}
-
-/* -------- Footer -------- */
-footer {
-    background: #111114;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #c21807;
-    margin-top: 50px;
-}
-footer p {
-    margin: 0;
-    color: #c5c5c5;
-}
-
-/* -------- Utility -------- */
-.center {
-    text-align: center;
-}
 
