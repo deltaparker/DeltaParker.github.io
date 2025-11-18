@@ -1,160 +1,43 @@
-/* =========================
-   Global Variables
-   ========================= */
-:root {
-    --bg: #0a0a0a;
-    --panel: #111;
-    --accent: #82ff82;
-    --text: #e8e8e8;
-    --muted: #9a9a9a;
-    --glass: rgba(0, 0, 0, 0.45);
-    --max-width: 1100px;
-    --pad: 24px;
-}
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* GLOBAL */
 body {
-    background: var(--bg);
-    color: var(--text);
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    background-color: #0d0d0d;
+    color: #eee;
 }
 
-/* =========================
-   NAV BAR
-   ========================= */
+/* NAV BAR */
 .nav {
+    width: 100%;
     background: #000;
-    border-bottom: 1px solid #222;
-    position: sticky;
+    padding: 15px 0;
+    position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 10;
+    border-bottom: 2px solid #111;
 }
 
 .nav-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--pad);
-    max-width: var(--max-width);
-    margin: auto;
 }
 
-.logo {
-    font-size: 1.4rem;
+.nav a {
+    color: #ccc;
+    margin-left: 20px;
+    text-decoration: none;
     font-weight: bold;
-    color: var(--accent);
-    letter-spacing: 2px;
 }
 
-nav a {
-    color: var(--text);
-    margin-left: 18px;
-    text-decoration: none;
-    font-weight: 600;
-    opacity: 0.85;
+.nav a:hover {
+    color: #6aff6a;
 }
 
-nav a:hover {
-    color: var(--accent);
-    opacity: 1;
-}
-
-/* =========================
-   HERO SECTION
-   ========================= */
-
+/* HERO SECTION */
 .hero {
-    height: 80vh;
-    background-image: url("https://images.unsplash.com/photo-1504270997636-07ddfbd48945?q=80&w=1920");
-    /* This is a zombie-apocalyptic city ruins image */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.9)
-    );
-}
-
-.hero-content {
-    position: absolute;
-    bottom: 120px;
-    left: 60px;
-    max-width: 600px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--accent);
-    text-shadow: 0 0 12px rgba(0, 255, 0, 0.3);
-}
-
-.hero p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    color: #ddd;
-}
-
-.button {
-    margin-top: 20px;
-    background: var(--accent);
-    padding: 12px 24px;
-    border-radius: 6px;
-    display: inline-block;
-    color: #000;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.button:hover {
-    background: #b0ffb0;
-}
-
-/* =========================
-   CONTENT
-   ========================= */
-
-section {
-    max-width: var(--max-width);
-    margin: 60px auto;
-    padding: 0 var(--pad);
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: var(--accent);
-    text-shadow: 0 0 6px rgba(0, 255, 0, 0.4);
-}
-
-p {
-    color: var(--muted);
-    font-size: 1.1rem;
-}
-
-/* =========================
-   FOOTER
-   ========================= */
-footer {
-    margin-top: 80px;
-    padding: 30px;
-    text-align: center;
-    background: #000;
-    color: var(--muted);
-    border-top: 1px solid #222;
-}
+    height: 90vh;
+    width: 100%;
