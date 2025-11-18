@@ -1,116 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Delta Parker Productions</title>
-  <link rel="stylesheet" href="styles.css?v=20">
-</head>
-<body>
-  <header class="nav">
-    <div class="nav-inner">
-      <div class="logo">Delta Parker Productions</div>
-      <nav>
-        <a href="index.html">Home</a><a href="about.html">About</a>
-        <a href="games.html">Games</a><a href="downloads.html">Downloads</a>
-        <a href="devblog.html">Dev Blog</a><a href="team.html">Team</a>
-        <a href="store.html">Store</a><a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<script>
+  // === EXACT FILENAMES AS THEY EXIST ON GITHUB ===
+  const images = [
+    "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
+    "mathieu-stern-ucqhZAtILQw-unsplash.jpg",
+    "nathan-wright-igpwuxZofgo-unsplash.jpg"
+  ];
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Welcome to the Apocalypse</h1>
-      <p>Where creativity meets chaos. Building indie zombie worlds one mutation at a time.</p>
-      <a class="button" href="games.html">View Our Games</a>
-    </div>
-  </section>
+  const hero = document.querySelector('.hero');
 
-  <main>
-    <section>
-      <h2>☣ Zombie AI Systems</h2>
-      <p>Dynamic horde behavior, merging logic, and sound-driven movement.</p>
-    </section>
+  // Randomly pick one image
+  const selected = images[Math.floor(Math.random() * images.length)];
 
-    <section>
-      <h2>🧪 Experimental Mechanics</h2>
-      <p>Procedural systems, random mutations, and evolving AI threats.</p>
-    </section>
-  </main>
+  // Debug log (you can remove later)
+  console.log("Hero background image:", selected);
 
-  <footer>© 2025 Delta Parker Productions — All Rights Reserved</footer>
-
-  <script>
-    // ===== CONFIG =====
-    // If your images are in a folder change this to "img/" or "assets/"
-    const imagePathPrefix = ""; // "" for repo root, or "img/" or "assets/"
-
-    // exact filenames you uploaded
-    const images = [
-      "mathieu-stern-ucqhzAtILQw-unsplash.jpg",
-      "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
-      "nathan-wright-igpwuxZofgo-unsplash.jpg"
-    ];
-
-    // build full paths
-    const fullPaths = images.map(f => imagePathPrefix + f);
-
-    // debug: print the resolved fullPaths so you can inspect console for 404s
-    console.log("Background image candidates:", fullPaths);
-
-    // pick random on load
-    const pick = fullPaths[Math.floor(Math.random() * fullPaths.length)];
-    const hero = document.querySelector('.hero');
-
-    // verify hero exists
-    if (hero) {
-      hero.style.setProperty('--hero-url', `url("${pick}")`);
-      // optional: auto-cycle (uncomment to enable)
-      /*
-      let idx = fullPaths.indexOf(pick);
-      setInterval(() => {
-        idx = (idx + 1) % fullPaths.length;
-        hero.style.setProperty('--hero-url', `url("${fullPaths[idx]}")`);
-      }, 5000); // change every 5s
-      */
-    } else {
-      console.error("Missing .hero element in DOM — index.html structure mismatch.");
-    }
-  </script>
-</body>
-</html>
-            <div class="hero-left">
-                <h1 class="h1">Welcome to the Apocalypse</h1>
-                <p class="lead">Where creativity meets chaos.  
-                Building indie zombie worlds one mutation at a time.</p>
-                <a class="btn" href="games.html">View Our Games</a>
-            </div>
-        </section>
-
-        <!-- FEATURE GRID -->
-        <div class="grid">
-            <div class="card">
-                <h3>⚔ Zombie AI Systems</h3>
-                <p>Dynamic horde behavior, merging logic, and sound-driven movement.</p>
-            </div>
-
-            <div class="card">
-                <h3>🧪 Experimental Mechanics</h3>
-                <p>Procedural systems, random mutations, and evolving AI threats.</p>
-            </div>
-
-            <div class="card">
-                <h3>🧩 Dev Blog</h3>
-                <p>Follow development progress, updates, and behind-the-scenes secrets.</p>
-            </div>
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="footer">
-            © 2025 Delta Parker Productions — All Rights Reserved
-        </footer>
-
-    </div>
-</body>
-</html>
+  // Apply image to CSS variable
+  hero.style.setProperty('--hero-url', `url("${selected}")`);
+</script>
