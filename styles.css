@@ -1,40 +1,145 @@
-:root{
-  --bg:#0b0b0b;
-  --panel:#131313;
-  --accent:#8aff8a;
-  --muted:#9aa09a;
-  --glass:rgba(255,255,255,0.03);
-  --max-width:1100px;
-  --pad:24px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  background:linear-gradient(180deg,#070707 0%, #0f0f0f 100%);
-  color:#e9efe9;
-  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  -webkit-font-smoothing:antialiased;
-}
-.container{max-width:var(--max-width);margin:40px auto;padding:0 20px;}
-.header{display:flex;align-items:center;gap:18px;}
-.logo{width:96px;height:96px;flex:0 0 96px;}
-.title{font-size:28px;margin:0}
-.tag{color:var(--muted);margin-top:6px;font-size:14px}
+/* -------- Global Zombie / Apocalyptic Theme -------- */
 
-.nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-.nav a{padding:8px 14px;background:var(--glass);border-radius:10px;color:var(--accent);text-decoration:none;font-weight:600}
-.hero{margin-top:28px;padding:24px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);display:flex;gap:24px;align-items:center}
-.hero-left{flex:1}
-.h1{font-size:42px;margin:0 0 10px 0}
-.lead{color:var(--muted);font-size:18px;margin:0 0 12px 0}
-.btn{display:inline-block;padding:10px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#3bcf6a);color:#061006;text-decoration:none;font-weight:700}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent);padding:16px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-.footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center;padding:30px 0}
-
-@media (max-width:720px){
-  .hero{flex-direction:column;align-items:flex-start}
-  .logo{width:80px;height:80px}
-  .h1{font-size:32px}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0b0b0d; /* deep black */
+    color: #e0e0e0; /* light text */
 }
+
+/* Subtle film-grain texture */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR4AWP4+fP7HwAFgwJ/lXK4WAAAAABJRU5ErkJggg==");
+    opacity: 0.08;
+    z-index: 1;
+}
+
+/* -------- Navigation Bar -------- */
+nav {
+    background: #111114;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #c21807;
+}
+
+nav a {
+    color: #f3f3f3;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: #c21807;
+    text-shadow: 0 0 5px #c21807;
+}
+
+/* -------- Hero Section -------- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&w=1600&q=60');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 60px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    text-shadow: 0 0 15px #c21807;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+.hero .btn {
+    margin-top: 20px;
+    background: #c21807;
+    padding: 12px 25px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.hero .btn:hover {
+    background: #e22313;
+    box-shadow: 0 0 10px #c21807;
+}
+
+/* -------- Section Styles -------- */
+section {
+    padding: 50px 10%;
+}
+
+h2 {
+    border-left: 5px solid #c21807;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+/* -------- Cards (Games / Blog / Store) -------- */
+.card {
+    background: #141418;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #222;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: #c21807;
+    box-shadow: 0 0 15px #c21807;
+}
+
+/* -------- Buttons -------- */
+.btn {
+    background: #c21807;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #e22313;
+    box-shadow: 0 0 10px #c21807;
+}
+
+/* -------- Footer -------- */
+footer {
+    background: #111114;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #c21807;
+    margin-top: 50px;
+}
+footer p {
+    margin: 0;
+    color: #c5c5c5;
+}
+
+/* -------- Utility -------- */
+.center {
+    text-align: center;
+}
+
