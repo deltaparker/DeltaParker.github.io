@@ -1,31 +1,20 @@
-/* ---------------------------------------------------------
-   GLOBAL APPEARANCE — FULL APOCALYPTIC THEME
---------------------------------------------------------- */
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: #ccc;
-    overflow-x: hidden;
-
-    /* Grunge + gradient base */
-    background: radial-gradient(circle at center, #1a1a1a 0%, #000 80%),
-                url('https://i.imgur.com/WnH3o4q.png'); /* grunge texture */
-    background-size: cover;
+:root {
+  --bg: #0b0b0b;
+  --panel: #131313;
+  --accent: #8aff8a;
+  --muted: #9aa09a;
+  --glass: rgba(255,255,255,0.03);
+  --max-width: 1100px;
+  --pad: 24px;
 }
 
-/* ---------------------------------------------------------
-   FOG ANIMATION
---------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
 
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0;
-    width: 120%;
-    height: 120%;
-    background: url('htt
+body {
+  margin: 0;
+  background: l
+
 
 
