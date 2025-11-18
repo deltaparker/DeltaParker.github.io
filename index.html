@@ -1,75 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delta Parker Productions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- ================= NAVIGATION ================= -->
-    <nav class="navbar">
-        <div class="logo">Delta Parker Productions</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="downloads.html">Downloads</a></li>
-            <li><a href="devblog.html">Dev Blog</a></li>
-            <li><a href="team.html">Team</a></li>
-            <li><a href="store.html">Store</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+    <header class="nav">
+        <div class="nav-inner">
+            <div class="logo">Delta Parker Productions</div>
 
-    <!-- ================= HERO SECTION ================= -->
-    <header class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Welcome to the Apocalypse</h1>
-            <p>Building zombie worlds one mutation at a time.</p>
-            <a href="games.html" class="btn">View Our Games</a>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Games</a>
+                <a href="#">Downloads</a>
+                <a href="#">Dev Blog</a>
+                <a href="#">Team</a>
+                <a href="#">Store</a>
+                <a href="#">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- ================= MAIN CONTENT ================= -->
-    <main class="content">
-        <section>
-            <h2>Zombie / Apocalyptic Game Studio</h2>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Apocalypse</h1>
             <p>
-                We create stylized, chaotic, undead-filled worlds.  
-                Our mission: craft indie games with personality, style, and lots of zombies.
+                Where creativity meets chaos. Building indie zombie worlds one mutation at a time.
             </p>
-        </section>
+            <a class="button" href="#">View Our Games</a>
+        </div>
+    </section>
 
-        <section class="image-row">
-            <img src="alex-lo-storto-BZIaA-uaqXs-unsplash.jpg" alt="zombie city">
-            <img src="mathieu-stern-ucqhZAtILQw-unsplash.jpg" alt="zombie neon">
-            <img src="nathan-wright-igpwuxZofgo-unsplash.jpg" alt="creature">
-        </section>
-    </main>
+    <section>
+        <h2>☣ Zombie AI Systems</h2>
+        <p>Dynamic horde behavior, merging logic, and sound-driven movement.</p>
+    </section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <p>© 2025 Delta Parker Productions — All Rights Reserved</p>
+    <section>
+        <h2>🧪 Experimental Mechanics</h2>
+        <p>Procedural systems, random mutations, and evolving AI threats.</p>
+    </section>
+
+    <section>
+        <h2>📗 Dev Blog</h2>
+        <p>Follow development progress, updates, and behind-the-scenes insights.</p>
+    </section>
+
+    <footer>
+        © 2025 Delta Parker Productions — All Rights Reserved
     </footer>
 
-
-    <!-- ================= HERO IMAGE SCRIPT ================= -->
     <script>
+        // Random zombie background image
         const images = [
-            "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg",
-            "mathieu-stern-ucqhZAtILQw-unsplash.jpg",
-            "nathan-wright-igpwuxZofgo-unsplash.jpg"
+            "nathan-wright-igpwuxZofgo-unsplash.jpg",
+            "mathieu-stern-ucqhzAtILQw-unsplash.jpg",
+            "alex-lo-storto-BZIaA-uaqXs-unsplash.jpg"
         ];
 
-        const hero = document.querySelector('.hero');
-
-        const selected = images[Math.floor(Math.random() * images.length)];
-
-        hero.style.backgroundImage = `url('${selected}')`;
+        const pick = images[Math.floor(Math.random() * images.length)];
+        document.querySelector(".hero").style.backgroundImage = `url('${pick}')`;
     </script>
 
 </body>
