@@ -1,39 +1,70 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delta Parker Game Studio</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #fff;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 20px;
-            color: #ccc;
-        }
-        .footer {
-            margin-top: 50px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delta Parker Productions</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-    <h1>Delta Parker Game Studio</h1>
-    <p>Indie games built with passion, creativity, and chaos.</p>
 
-    <div class="footer">
-        © 2025 Delta Parker
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <img src="logo.svg" class="logo" alt="Delta Parker Logo">
+            <div>
+                <h1 class="title">Delta Parker Productions</h1>
+                <div class="tag">Zombie / Apocalyptic Game Studio</div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="devblog.html">Dev Blog</a>
+            <a href="team.html">Team</a>
+            <a href="store.html">Store</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-left">
+                <h1 class="h1">Welcome to the Apocalypse</h1>
+                <p class="lead">Where creativity meets chaos.  
+                Building indie zombie worlds one mutation at a time.</p>
+                <a class="btn" href="games.html">View Our Games</a>
+            </div>
+        </section>
+
+        <!-- FEATURE GRID -->
+        <div class="grid">
+            <div class="card">
+                <h3>⚔ Zombie AI Systems</h3>
+                <p>Dynamic horde behavior, merging logic, and sound-driven movement.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧪 Experimental Mechanics</h3>
+                <p>Procedural systems, random mutations, and evolving AI threats.</p>
+            </div>
+
+            <div class="card">
+                <h3>🧩 Dev Blog</h3>
+                <p>Follow development progress, updates, and behind-the-scenes secrets.</p>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            © 2025 Delta Parker Productions — All Rights Reserved
+        </footer>
+
     </div>
 </body>
 </html>
