@@ -1,102 +1,86 @@
-/* GLOBAL SETTINGS */
+/* Dark Neon Theme */
 body {
+    background-color: #000;
+    color: #eee;
     margin: 0;
-    padding: 0;
-    background: black;
-    color: #e0e0e0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     text-align: center;
 }
 
-/* MAIN CONTAINER */
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 25px;
-    background: #111;
-    border-radius: 12px;
-    box-shadow: 0 0 25px #ff00ff55;
+/* Header Navigation */
+header {
+    padding: 15px 0;
 }
 
-/* HEADINGS */
-h1 {
+nav a {
+    margin: 0 15px;
     color: #ff00ff;
-    font-size: 2.4rem;
-    margin-bottom: 15px;
-}
-
-h2 {
-    color: #ff66ff;
-}
-
-/* TAGLINE */
-.tagline {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    color: #ccc;
-}
-
-/* BUTTONS */
-.button {
-    display: block;
-    width: 100%;
-    max-width: 260px;
-    margin: 12px auto;
-    padding: 15px;
-    background: #ff00ff;
-    color: black;
+    text-decoration: none;
+    font-size: 1.2em;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.2s ease-in-out;
+    transition: 0.2s;
 }
 
-.button:hover {
-    background: #ff55ff;
-    transform: scale(1.03);
+nav a:hover {
+    color: #ffffff;
 }
 
-/* BACK LINK */
-.back-link {
-    display: inline-block;
-    margin-top: 25px;
-    text-decoration: none;
+/* Main Home Layout */
+.home-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.home-title {
+    font-size: 2.4em;
     color: #ff00ff;
-    font-size: 1.1rem;
+    text-shadow: 0 0 15px #ff00ff;
 }
 
-.back-link:hover {
-    color: #ff66ff;
+.home-subtitle {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-top: 10px;
 }
 
-/* DEVLOG */
-.devlog-entry {
-    margin-top: 30px;
-    padding: 20px;
-    background: #1a1a1a;
-    border-left: 4px solid #ff00ff;
+/* Section Titles */
+.section-title {
+    margin-top: 40px;
+    font-size: 1.8em;
+    color: #ff00ff;
+    text-shadow: 0 0 12px #ff00ff;
+}
+
+/* Asset Preview Grid */
+.asset-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding-bottom: 40px;
+}
+
+.asset-card {
+    background: #111;
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 18px #ff00ff55;
+    transition: 0.2s;
+}
+
+.asset-card:hover {
+    box-shadow: 0 0 25px #ff00ff;
+    transform: scale(1.02);
+}
+
+.asset-card img {
+    width: 100%;
     border-radius: 8px;
-    text-align: left;
 }
 
-/* RESPONSIVE MOBILE DESIGN */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 1.9rem;
-    }
-
-    .container {
-        padding: 20px;
-        margin-top: 20px;
-    }
-
-    .button {
-        padding: 13px;
-        font-size: 1rem;
-    }
-
-    .tagline {
-        font-size: 1rem;
-    }
+.asset-text {
+    margin-top: 10px;
+    color: #eee;
 }
