@@ -1,177 +1,68 @@
-/* -------------------------------------------------
-   GLOBAL
-------------------------------------------------- */
-body {
-    margin: 0;
-    padding: 0;
-    background: #000;
-    color: #eee;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Parker Productions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-/* -------------------------------------------------
-   HEADER
-------------------------------------------------- */
-header {
-    width: 100%;
-    padding: 15px 25px;
-    background: #000;
-    border-bottom: 3px solid red;
+    <!-- HEADER -->
+    <header>
+        <div class="logo">Delta Parker Productions</div>
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Games</a>
+            <a href="#">Dev Blog</a>
+            <a href="#">Downloads</a>
+            <a href="#">Store</a>
+            <a href="#">Team</a>
+            <a href="#">Contact</a>
+        </nav>
 
-.logo {
-    color: #ff2a2a;
-    font-size: 1.8em;
-    font-weight: bold;
-    text-shadow: 0 0 8px red, 0 0 20px red, 0 0 40px red;
-}
+        <div class="button-group">
+            <a class="donate-btn" href="#">Donate</a>
+            <a class="cash-btn" href="#">CashApp</a>
+        </div>
+    </header>
 
-/* NAVIGATION */
-nav a {
-    color: white;
-    margin: 0 14px;
-    text-decoration: none;
-    font-size: 1.15em;
-    font-weight: bold;
-}
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <!-- IMPORTANT: Make sure this file matches EXACTLY inside GitHub -->
+        <img src="unsaved_hero.png" alt="Hero Background">
 
-nav a:hover {
-    color: red;
-    text-shadow: 0 0 8px red;
-}
+        <div class="hero-text">
+            <h1>THE OUTBREAK HAS BEGUN</h1>
+            <p>Survive the fall of civilization… or join the horde.</p>
+        </div>
+    </section>
 
-/* -------------------------------------------------
-   GLOWING DONATE / CASH BUTTONS
-------------------------------------------------- */
-.button-group a {
-    padding: 12px 22px;
-    margin-left: 12px;
-    border-radius: 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    <!-- ASSETS -->
+    <section>
+        <h2 class="section-title">Asset Previews</h2>
 
-    display: inline-block;
-    font-size: 1.1em;
+        <div class="asset-grid">
 
-    transition: 0.15s;
-}
+            <div class="asset-card">
+                <img src="asset1.png" alt="Asset Preview 1">
+                <p>Preview Asset #1</p>
+            </div>
 
-/* Blue Neon Donate */
-.donate-btn {
-    background: #0066ff;
-    box-shadow: 
-        0 0 12px #0066ff,
-        0 0 24px #0066ff,
-        0 0 48px #0066ff;
-}
+            <div class="asset-card">
+                <img src="asset2.png" alt="Asset Preview 2">
+                <p>Preview Asset #2</p>
+            </div>
 
-.donate-btn:hover {
-    transform: scale(1.08);
-    background: #1a7fff;
-    box-shadow: 
-        0 0 18px #1a7fff,
-        0 0 32px #1a7fff,
-        0 0 60px #1a7fff;
-}
+            <div class="asset-card">
+                <img src="asset3.png" alt="Asset Preview 3">
+                <p>Preview Asset #3</p>
+            </div>
 
-/* Green Neon CashApp */
-.cash-btn {
-    background: #00cc44;
-    box-shadow:
-        0 0 12px #00cc44,
-        0 0 24px #00cc44,
-        0 0 48px #00cc44;
-}
+        </div>
+    </section>
 
-.cash-btn:hover {
-    transform: scale(1.08);
-    background: #00e055;
-    box-shadow:
-        0 0 18px #00e055,
-        0 0 32px #00e055,
-        0 0 60px #00e055;
-}
-
-/* -------------------------------------------------
-   HERO SECTION
-------------------------------------------------- */
-.hero {
-    position: relative;
-    width: 100%;
-    max-height: 650px;
-    overflow: hidden;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.hero-text {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    text-align: center;
-}
-
-.hero-text h1 {
-    color: red;
-    font-size: 3.2em;
-    text-shadow: 
-        0 0 15px red,
-        0 0 30px red,
-        0 0 60px red;
-    font-weight: bold;
-}
-
-.hero-text p {
-    margin-top: 10px;
-    color: #ddd;
-    font-size: 1.4em;
-}
-
-/* -------------------------------------------------
-   ASSET GRID
-------------------------------------------------- */
-.section-title {
-    text-align: center;
-    color: red;
-    font-size: 2.4em;
-    margin-top: 40px;
-    text-shadow: 0 0 20px red, 0 0 40px red;
-}
-
-.asset-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
-    padding: 30px;
-}
-
-.asset-card {
-    background: #111;
-    border: 2px solid red;
-    border-radius: 12px;
-    padding: 12px;
-    text-align: center;
-
-    box-shadow: 0 0 20px #ff000055;
-    transition: 0.2s;
-}
-
-.asset-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px red;
-}
-
-.asset-card img {
-    width: 100%;
-    border-radius: 10px;
-}
+</body>
+</html>
