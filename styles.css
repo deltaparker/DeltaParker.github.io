@@ -1,86 +1,82 @@
-/* Dark Neon Theme */
 body {
     background-color: #000;
-    color: #eee;
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    color: #eee;
     text-align: center;
 }
 
-/* Header Navigation */
+/* Navigation */
 header {
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 nav a {
-    margin: 0 15px;
+    margin: 0 20px;
+    font-size: 1.3em;
     color: #ff00ff;
     text-decoration: none;
-    font-size: 1.2em;
     font-weight: bold;
-    transition: 0.2s;
 }
 
 nav a:hover {
-    color: #ffffff;
+    color: #fff;
 }
 
-/* Main Home Layout */
+/* Home layout */
 .home-container {
     max-width: 900px;
-    margin: auto;
-    padding: 30px 20px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 .home-title {
-    font-size: 2.4em;
     color: #ff00ff;
+    font-size: 2.5em;
     text-shadow: 0 0 15px #ff00ff;
 }
 
 .home-subtitle {
-    font-size: 1.1em;
-    color: #ccc;
     margin-top: 10px;
+    color: #ccc;
 }
 
 /* Section Titles */
 .section-title {
     margin-top: 40px;
-    font-size: 1.8em;
+    font-size: 2em;
     color: #ff00ff;
-    text-shadow: 0 0 12px #ff00ff;
+    text-shadow: 0 0 15px #ff00ff;
 }
 
-/* Asset Preview Grid */
+/* Asset Grid */
 .asset-grid {
     margin-top: 25px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    padding-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .asset-card {
     background: #111;
-    border: 2px solid #ff00ff;
-    border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 0 18px #ff00ff55;
+    border-radius: 12px;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 20px #ff00ff55;
     transition: 0.2s;
 }
 
 .asset-card:hover {
-    box-shadow: 0 0 25px #ff00ff;
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #ff00ff;
 }
 
 .asset-card img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .asset-text {
     margin-top: 10px;
-    color: #eee;
 }
