@@ -1,60 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About — Delta Parker</title>
 
     <style>
         body {
+            margin: 0;
+            padding: 0;
             background-color: #000;
-            color: #fff;
+            color: #eee;
             font-family: Arial, sans-serif;
-            margin: 40px;
             line-height: 1.6;
         }
-        a {
-            color: #9cf;
-            text-decoration: none;
-            font-size: 18px;
-        }
+
         .container {
             max-width: 900px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #111;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(255,0,150,0.3);
         }
+
         h1 {
-            margin-bottom: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff0099;
+            text-shadow: 0 0 10px #ff0099;
         }
+
         p {
             font-size: 18px;
         }
+
+        a {
+            color: #ff66cc;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px #ff66cc;
+        }
+
+        .back-link {
+            margin-top: 25px;
+            display: block;
+            text-align: center;
+        }
     </style>
 </head>
-
 <body>
-    <a href="index.html">← Home</a>
 
     <div class="container">
-        <h1>About Me</h1>
+        <h1>About My Game Development Journey</h1>
 
         <p>
-            I'm Dustan Parker — a lifetime gamer diving head-first into building my
-            own games. No studio, no funding — just a laptop, passion, and big goals.
+            I'm a lifetime gamer diving head-first into game development with nothing but
+            a laptop, passion, and big expectations. I have no funding, no team — just
+            grit and a drive to create something awesome.
         </p>
 
         <p>
-            This page exists to preview the assets I create and to show ongoing
-            development progress as I learn and build more each day.
+            My focus is on RTS gameplay with medium to high-quality visuals. This page
+            serves as a place to preview assets I create, showcase development progress,
+            and track my evolution as a new developer.
         </p>
 
         <p>
-            My main focus is real-time strategy gameplay with a goal of
-            producing medium to high-quality games that are fun, unique, and built
-            with pure creativity and dedication.
+            Everything here is built from scratch as I learn, improve, and push myself
+            to build fun and unique experiences for players.
         </p>
 
-        <p>
-            I'm all-in on this journey — expect great results.
-        </p>
+        <a class="back-link" href="index.html">← Back to Home</a>
     </div>
+
 </body>
 </html>
