@@ -1,81 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — Delta Parker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Delta Parker Productions</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #eee;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+  <!-- link to your site stylesheet -->
+  <link rel="stylesheet" href="styles.css">
 
-        .container {
-            max-width: 900px;
-            margin: 80px auto;
-            padding: 20px;
-            background: #111;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(255,0,150,0.3);
-        }
+  <!-- small page-safe overrides so About text won't vanish if styles.css has a bug -->
+  <style>
+    /* page content container */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 90px auto 120px; /* move content down (leave room for header) */
+      padding: 30px;
+      background: rgba(0,0,0,0.35);
+      border-radius: 8px;
+      color: #eee;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff0099;
-            text-shadow: 0 0 10px #ff0099;
-        }
+    .page-wrap h1 {
+      margin-top: 0;
+      font-size: 34px;
+      color: #ff3b3b;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+    }
 
-        p {
-            font-size: 18px;
-        }
+    .page-wrap p.lead {
+      color: #d7d7d7;
+      font-size: 18px;
+      margin-bottom: 18px;
+    }
 
-        a {
-            color: #ff66cc;
-            text-decoration: none;
-            font-size: 20px;
-        }
+    .page-wrap ul {
+      margin-left: 1.2rem;
+      color: #ddd;
+    }
 
-        a:hover {
-            text-shadow: 0 0 10px #ff66cc;
-        }
+    /* make sure header / nav from styles.css doesn't cover the page */
+    header.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
 
-        .back-link {
-            margin-top: 25px;
-            display: block;
-            text-align: center;
-        }
-    </style>
+    /* fallback for hero image area if styles elsewhere hides it */
+    .hero-fallback {
+      width: 100%;
+      height: 260px;
+      background: url('saved_zombie_image.jpg') center/cover no-repeat;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      filter: saturate(.9) contrast(.95);
+      box-shadow: inset 0 -60px 80px rgba(0,0,0,0.5);
+    }
+
+    a.back-link {
+      color: #c7c7ff;
+      display: inline-block;
+      margin-bottom: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    /* small responsive */
+    @media (max-width:720px) {
+      .page-wrap { margin: 120px 12px 50px; padding: 20px; }
+      .page-wrap h1 { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>About My Game Development Journey</h1>
+  <!-- ===== header (same structure used across your site) ===== -->
+  <header class="site-header">
+    <div class="logo">Delta Parker Productions</div>
 
-        <p>
-            I'm a lifetime gamer diving head-first into game development with nothing but
-            a laptop, passion, and big expectations. I have no funding, no team — just
-            grit and a drive to create something awesome.
-        </p>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="games.html">Games</a>
+      <a href="devblog.html">Dev Blog</a>
+      <a href="downloads.html">Downloads</a>
+      <a href="store.html">Store</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html">Contact</a>
 
-        <p>
-            My focus is on RTS gameplay with medium to high-quality visuals. This page
-            serves as a place to preview assets I create, showcase development progress,
-            and track my evolution as a new developer.
-        </p>
+      <!-- donate buttons (fine to keep these) -->
+      <a href="https://www.paypal.com/paypalme/dkparker0494" target="_blank" class="donate-btn paypal">Donate</a>
+      <a href="https://cash.app/$d1parker0" target="_blank" class="donate-btn cashapp">CashApp</a>
+    </nav>
+  </header>
 
-        <p>
-            Everything here is built from scratch as I learn, improve, and push myself
-            to build fun and unique experiences for players.
-        </p>
+  <!-- ===== page content ===== -->
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html">← Home</a>
 
-        <a class="back-link" href="index.html">← Back to Home</a>
+      <!-- optional hero area (keeps visual continuity) -->
+      <div class="hero-fallback" aria-hidden="true"></div>
+
+      <h1>About Delta Parker Productions</h1>
+
+      <p class="lead">
+        Delta Parker Productions is an independent game studio focused on creating high-quality RTS (real-time strategy) gameplay experiences and experimental zombie mechanics. This site is a preview space for assets, prototypes, and development progress — a place to show what I'm building as I go.
+      </p>
+
+      <p>
+        A few important facts about the studio and vision:
+      </p>
+
+      <ul>
+        <li><strong>Lifetime gamer & solo dev:</strong> I'm a lifetime gamer building games because I love making them. I'm just one person with a laptop — no studio funding right now, just head-down, all-in effort.</li>
+        <li><strong>Focus:</strong> My primary focus is RTS gameplay — balanced systems, AI-driven hordes, and fun unit design at medium → high quality targets.</li>
+        <li><strong>What you'll see here:</strong> Early asset previews, design notes, development updates, and experimental systems I test while building prototypes.</li>
+        <li><strong>Funding:</strong> I have no external funding at the moment — community support (donations) helps a lot and lets me keep iterating.</li>
+      </ul>
+
+      <p>
+        If you like what you see, check the <a href="devblog.html">Dev Blog</a> for frequent updates and the <a href="games.html">Games</a> page for demos and downloads. Thanks for stopping by — every view and share helps.
+      </p>
+
+      <hr>
+
+      <p style="font-size:0.9rem;color:#bdbdbd;margin-top:18px;">
+        — Delta Parker, 2025
+      </p>
     </div>
+  </main>
 
 </body>
 </html>
