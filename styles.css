@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+/* ================= BASIC LAYOUT ================= */
 body {
     margin: 0;
     padding: 0;
@@ -11,84 +11,64 @@ body {
 .site-header {
     width: 100%;
     background: #000;
-    padding: 12px 20px;
-    border-bottom: 3px solid red;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ff0000;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: 900;
+    font-size: 26px;
+    font-weight: bold;
     color: #ff0000;
-    text-shadow: 0 0 10px red, 0 0 20px red;
 }
 
+/* ================= NAVIGATION ================= */
 .nav {
     display: flex;
-    gap: 18px;
-    align-items: center;
+    gap: 20px;
 }
 
 .nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: 0.3s ease;
 }
 
 .nav a:hover {
-    color: red;
-    text-shadow: 0 0 10px red;
+    color: #ff0000;
 }
 
 /* ================= DONATE BUTTONS ================= */
 .donate-btn {
-    padding: 8px 16px;
+    padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
-    text-transform: uppercase;
-    color: white;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    color: #fff;
+    border: none;
 }
 
+/* PayPal - red */
 .paypal {
-    background: #FF0000;
-    box-shadow: 0 0 10px red;
-    animation: pulse 1.5s infinite;
+    background: #ff0000;
 }
 
+/* CashApp - green */
 .cashapp {
     background: #00c244;
-    box-shadow: 0 0 10px #00ff55;
-    animation: pulse-green 1.5s infinite;
 }
 
-.paypal:hover { transform: scale(1.1); }
-.cashapp:hover { transform: scale(1.1); }
-
-/* Red Pulse */
-@keyframes pulse {
-    0% { box-shadow: 0 0 10px red; }
-    50% { box-shadow: 0 0 20px red; }
-    100% { box-shadow: 0 0 10px red; }
-}
-
-/* Green Pulse */
-@keyframes pulse-green {
-    0% { box-shadow: 0 0 10px #00ff55; }
-    50% { box-shadow: 0 0 20px #00ff99; }
-    100% { box-shadow: 0 0 10px #00ff55; }
+/* Simple hover */
+.donate-btn:hover {
+    opacity: 0.8;
 }
 
 /* ================= HERO SECTION ================= */
 .hero {
     position: relative;
     width: 100%;
-    overflow: hidden;
     text-align: center;
 }
 
@@ -105,12 +85,11 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 50px;
-    font-weight: 900;
-    text-shadow: 0 0 15px black;
+    font-size: 48px;
+    text-shadow: 0 0 10px black;
 }
 
 .hero-text p {
-    font-size: 22px;
+    font-size: 20px;
     text-shadow: 0 0 10px black;
 }
