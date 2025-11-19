@@ -24,50 +24,77 @@ header {
 }
 
 .logo {
-    color: white;
-    font-size: 1.5em;
+    color: #ff2a2a;
+    font-size: 1.8em;
     font-weight: bold;
+    text-shadow: 0 0 8px red, 0 0 20px red, 0 0 40px red;
 }
 
+/* NAVIGATION */
 nav a {
     color: white;
-    margin: 0 12px;
+    margin: 0 14px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.15em;
     font-weight: bold;
 }
 
 nav a:hover {
     color: red;
+    text-shadow: 0 0 8px red;
 }
 
-/* Neon Buttons */
+/* -------------------------------------------------
+   GLOWING DONATE / CASH BUTTONS
+------------------------------------------------- */
 .button-group a {
-    padding: 10px 18px;
-    margin-left: 10px;
-    border-radius: 6px;
+    padding: 12px 22px;
+    margin-left: 12px;
+    border-radius: 10px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 0 10px #fff5;
+
+    display: inline-block;
+    font-size: 1.1em;
+
+    transition: 0.15s;
 }
 
+/* Blue Neon Donate */
 .donate-btn {
     background: #0066ff;
-    box-shadow: 0 0 15px #0066ff;
-}
-
-.cash-btn {
-    background: #00cc44;
-    box-shadow: 0 0 15px #00cc44;
+    box-shadow: 
+        0 0 12px #0066ff,
+        0 0 24px #0066ff,
+        0 0 48px #0066ff;
 }
 
 .donate-btn:hover {
+    transform: scale(1.08);
     background: #1a7fff;
+    box-shadow: 
+        0 0 18px #1a7fff,
+        0 0 32px #1a7fff,
+        0 0 60px #1a7fff;
+}
+
+/* Green Neon CashApp */
+.cash-btn {
+    background: #00cc44;
+    box-shadow:
+        0 0 12px #00cc44,
+        0 0 24px #00cc44,
+        0 0 48px #00cc44;
 }
 
 .cash-btn:hover {
+    transform: scale(1.08);
     background: #00e055;
+    box-shadow:
+        0 0 18px #00e055,
+        0 0 32px #00e055,
+        0 0 60px #00e055;
 }
 
 /* -------------------------------------------------
@@ -75,11 +102,16 @@ nav a:hover {
 ------------------------------------------------- */
 .hero {
     position: relative;
+    width: 100%;
+    max-height: 650px;
+    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover;
 }
 
 .hero-text {
@@ -91,15 +123,18 @@ nav a:hover {
 
 .hero-text h1 {
     color: red;
-    font-size: 3em;
-    text-shadow: 0 0 20px red, 0 0 40px red;
+    font-size: 3.2em;
+    text-shadow: 
+        0 0 15px red,
+        0 0 30px red,
+        0 0 60px red;
     font-weight: bold;
 }
 
 .hero-text p {
     margin-top: 10px;
     color: #ddd;
-    font-size: 1.3em;
+    font-size: 1.4em;
 }
 
 /* -------------------------------------------------
@@ -108,9 +143,9 @@ nav a:hover {
 .section-title {
     text-align: center;
     color: red;
-    font-size: 2.2em;
+    font-size: 2.4em;
     margin-top: 40px;
-    text-shadow: 0 0 20px red;
+    text-shadow: 0 0 20px red, 0 0 40px red;
 }
 
 .asset-grid {
@@ -124,8 +159,9 @@ nav a:hover {
     background: #111;
     border: 2px solid red;
     border-radius: 12px;
-    padding: 10px;
+    padding: 12px;
     text-align: center;
+
     box-shadow: 0 0 20px #ff000055;
     transition: 0.2s;
 }
