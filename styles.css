@@ -1,4 +1,4 @@
-/* GENERAL RESET */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -9,31 +9,33 @@ body {
     background: black;
     color: white;
     font-family: Arial, sans-serif;
+    line-height: 1.5;
 }
 
 /* HEADER */
 header {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
     background: #000;
     border-bottom: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .logo {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
     color: red;
     text-shadow: 0 0 10px red;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -58,7 +60,7 @@ nav a:hover {
 .donate-btn,
 .cash-btn {
     padding: 10px 16px;
-    border-radius: 12px;
+    border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -77,39 +79,39 @@ nav a:hover {
 .hero {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    height: auto;
 }
 
 .hero-img {
     width: 100%;
     height: auto;
-    display: block;
+    object-fit: cover;
     opacity: 0.9;
 }
 
 .hero-text {
     position: absolute;
-    top: 20%;
+    top: 18%;
     width: 100%;
     text-align: center;
+    padding: 0 15px;
 }
 
 .hero-text h1 {
-    font-size: 48px;
+    font-size: 50px;
     color: red;
     text-shadow: 0 0 20px red;
-    margin-bottom: 10px;
 }
 
 .hero-text p {
-    font-size: 20px;
+    font-size: 22px;
 }
 
 /* ASSETS */
 .section-title {
     text-align: center;
-    margin: 40px 0 20px;
-    font-size: 32px;
+    margin: 50px 0 20px;
+    font-size: 36px;
     color: red;
     text-shadow: 0 0 20px red;
 }
@@ -117,7 +119,7 @@ nav a:hover {
 .asset-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     padding: 20px;
     flex-wrap: wrap;
 }
@@ -134,29 +136,25 @@ nav a:hover {
 
 .asset-card img {
     width: 100%;
+    border-radius: 8px;
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE */
 @media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
     .hero-text h1 {
         font-size: 32px;
     }
 
     .hero-text p {
         font-size: 16px;
-    }
-
-    header {
-        justify-content: center;
-        gap: 15px;
-        text-align: center;
-    }
-
-    nav {
-        gap: 12px;
-    }
-
-    .button-group {
-        justify-content: center;
     }
 }
