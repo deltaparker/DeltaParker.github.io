@@ -1,145 +1,137 @@
-/* GLOBAL */
+/* -----------------------------
+   GLOBAL STYLE
+----------------------------- */
 body {
-    background-color: #000;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     color: #eee;
-    overflow-x: hidden;
+    background: #000;
 }
 
-/* HEADER */
+/* -----------------------------
+   HEADER
+----------------------------- */
 header {
-    width: 100%;
-    padding: 15px 0;
+    background: #000;
     border-bottom: 3px solid red;
-    background-color: #000;
-}
-
-.header-container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 1.5em;
+header h1 {
+    color: white;
+    margin: 0;
+    font-size: 1.6em;
     font-weight: bold;
-    color: #fff;
 }
 
-/* NAVBAR */
+/* NAVIGATION */
 nav a {
+    color: white;
     margin: 0 15px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
 }
 
 nav a:hover {
     color: red;
-    text-shadow: 0 0 10px red;
 }
 
-/* DONATE BUTTONS */
-.btn {
+/* Buttons */
+.button-blue {
+    background: #007bff;
     padding: 10px 18px;
     border-radius: 6px;
+    color: white !important;
     font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-    margin-left: 10px;
 }
 
-.donate-btn {
-    background-color: #0077ff;
+.button-blue:hover {
+    background: #2890ff;
 }
 
-.cashapp-btn {
-    background-color: #00c400;
+.button-green {
+    background: #00cc44;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: white !important;
+    font-weight: bold;
 }
 
-/* HERO SECTION */
+.button-green:hover {
+    background: #00dd55;
+}
+
+/* -----------------------------
+   HERO SECTION
+----------------------------- */
 .hero {
     position: relative;
     width: 100%;
-    height: 600px;
-    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-text {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    display: block;
 }
 
 .hero-title {
-    font-size: 3.5em;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
     font-weight: bold;
     color: red;
+    text-shadow: 0 0 20px red, 0 0 40px red;
+}
+
+.hero-subtitle {
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+    color: #ddd;
+}
+
+/* -----------------------------
+   ASSET GRID
+----------------------------- */
+.section-title {
+    text-align: center;
+    color: red;
+    font-size: 2.2em;
+    margin-top: 40px;
     text-shadow: 0 0 20px red;
 }
 
-.hero-subtext {
-    margin-top: 15px;
-    font-size: 1.4em;
-    color: #ccc;
-}
-
-/* ASSET SECTION */
-.asset-section {
-    width: 90%;
-    max-width: 1200px;
-    margin: 60px auto;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5em;
-    color: #ff00ff;
-    text-shadow: 0 0 15px #ff00ff;
-}
-
-/* ASSET GRID */
 .asset-grid {
-    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    gap: 20px;
+    padding: 20px 40px;
 }
 
 .asset-card {
     background: #111;
-    padding: 12px;
+    padding: 10px;
+    border: 2px solid red;
     border-radius: 12px;
-    border: 3px solid #ff00ff;
-    box-shadow: 0 0 25px #ff00ff55;
+    text-align: center;
+    box-shadow: 0 0 20px #ff000055;
     transition: 0.2s;
 }
 
 .asset-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 35px #ff00ff;
+    box-shadow: 0 0 40px red;
 }
 
 .asset-card img {
     width: 100%;
     border-radius: 10px;
-}
-
-.asset-text {
-    margin-top: 10px;
-    color: #ddd;
 }
