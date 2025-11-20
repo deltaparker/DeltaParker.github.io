@@ -1,6 +1,4 @@
-/* -------------------------------------------------
-   GLOBAL RESET
-------------------------------------------------- */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +9,6 @@ body {
     background: #000;
     color: #fff;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
 }
 
 /* -------------------------------------------------
@@ -28,27 +25,24 @@ header {
     flex-wrap: wrap;
 }
 
-/* LOGO */
 .logo {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
-    color: #ff2a2a;
-    text-shadow: 0 0 10px red, 0 0 25px red;
+    color: red;
+    text-shadow: 0 0 15px red, 0 0 30px red;
 }
 
 /* NAVIGATION */
 nav {
     display: flex;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
 }
 
 nav a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1em;
     transition: 0.2s;
 }
 
@@ -57,121 +51,115 @@ nav a:hover {
     text-shadow: 0 0 10px red;
 }
 
-/* -------------------------------------------------
-   DONATE / CASHAPP BUTTONS
-------------------------------------------------- */
+/* BUTTONS */
 .button-group {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .donate-btn,
 .cash-btn {
     padding: 10px 16px;
     border-radius: 10px;
-    color: #fff;
+    color: white;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1em;
     transition: 0.2s;
 }
 
-/* Neon Blue Donate */
+/* Blue Donate */
 .donate-btn {
-    background: #0066ff;
-    box-shadow: 0 0 15px #0066ff, 0 0 30px #0066ff;
+    background: #007bff;
+    box-shadow: 0 0 15px #007bff;
 }
 
 .donate-btn:hover {
-    background: #1a7fff;
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #1a7fff, 0 0 50px #1a7fff;
+    background: #2a8dff;
+    box-shadow: 0 0 25px #2a8dff;
 }
 
-/* Neon Green CashApp */
+/* Green CashApp */
 .cash-btn {
     background: #00cc44;
-    box-shadow: 0 0 15px #00cc44, 0 0 30px #00cc44;
+    box-shadow: 0 0 15px #00cc44;
 }
 
 .cash-btn:hover {
     background: #00e055;
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #00e055, 0 0 50px #00e055;
+    box-shadow: 0 0 25px #00e055;
 }
 
 /* -------------------------------------------------
    HERO SECTION
 ------------------------------------------------- */
+
 .hero {
     position: relative;
     width: 100%;
+    max-height: 650px;
     overflow: hidden;
 }
 
 .hero-img {
     width: 100%;
     display: block;
-    opacity: 0.95;
     object-fit: cover;
+    opacity: 0.95;
 }
 
 .hero-text {
     position: absolute;
-    top: 25%;
+    top: 40%;
     width: 100%;
     text-align: center;
+    text-shadow: 0 0 20px red, 0 0 30px red;
 }
 
-/* Big Neon Red Title */
 .hero-text h1 {
     font-size: 3.5em;
     font-weight: bold;
     color: red;
-    text-shadow: 
-        0 0 10px red,
-        0 0 30px red,
-        0 0 60px red;
 }
 
 .hero-text p {
-    font-size: 1.4em;
     margin-top: 10px;
+    color: #ddd;
+    font-size: 1.4em;
 }
 
 /* -------------------------------------------------
-   ASSET SECTION
+   ASSET GRID
 ------------------------------------------------- */
 .section-title {
-    margin-top: 40px;
     text-align: center;
-    font-size: 2.3em;
     color: red;
-    text-shadow: 0 0 20px red, 0 0 40px red;
+    font-size: 2.4em;
+    margin-top: 40px;
+    text-shadow: 0 0 20px red;
 }
 
 .asset-grid {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
+    padding: 30px;
     flex-wrap: wrap;
-    padding: 20px;
 }
 
 .asset-card {
-    width: 260px;
+    width: 270px;
     background: #111;
-    border: 2px solid red;
-    border-radius: 12px;
-    text-align: center;
     padding: 15px;
-    box-shadow: 0 0 15px red;
+    border-radius: 12px;
+    border: 2px solid red;
+    text-align: center;
+    box-shadow: 0 0 20px red;
     transition: 0.2s;
 }
 
 .asset-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 40px red;
+    box-shadow: 0 0 35px red;
 }
 
 .asset-card img {
@@ -179,13 +167,11 @@ nav a:hover {
     border-radius: 10px;
 }
 
-/* -------------------------------------------------
-   MOBILE RESPONSIVE
-------------------------------------------------- */
-@media (max-width: 800px) {
+/* MOBILE FIXES */
+@media (max-width: 900px) {
 
     header {
-        flex-direction: column;
+        justify-content: center;
         text-align: center;
         gap: 15px;
     }
@@ -195,14 +181,10 @@ nav a:hover {
     }
 
     .hero-text h1 {
-        font-size: 2.4em;
+        font-size: 2.3em;
     }
 
     .hero-text p {
         font-size: 1.1em;
-    }
-
-    .asset-card {
-        width: 90%;
     }
 }
