@@ -1,0 +1,144 @@
+/* =========================================================
+   CINEMATIC FX RESTORED — LOCAL ASSET EDITION (GitHub Safe)
+   ========================================================= */
+
+/* Global theme */
+body {
+    background: #000;
+    color: white;
+    position: relative;
+}
+
+/* Vignette */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.85));
+    z-index: 1;
+}
+
+/* --------- LOGO FLICKER --------- */
+.logo {
+    animation: neonFlicker 2.8s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%   { opacity: 0.7; text-shadow: 0 0 3px #ff0000; }
+    5%   { opacity: 1;   text-shadow: 0 0 15px #ff0000; }
+    30%  { opacity: 0.6; }
+    70%  { opacity: 1;   text-shadow: 0 0 20px #cc0000; }
+    100% { opacity: 0.85; }
+}
+
+/* --------- RISING SMOKE BEHIND LOGO --------- */
+.logo::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 180px;
+    height: 260px;
+    background: url("effects/smoke.png") no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+    transform: translateX(-50%);
+    animation: smokeRise 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes smokeRise {
+    0%   { transform: translate(-50%, 40px) scale(1); opacity: .5; }
+    50%  { transform: translate(-50%, -20px) scale(1.2); opacity: .25; }
+    100% { transform: translate(-50%, -80px) scale(1.3); opacity: 0; }
+}
+
+/* --------- EMBERS FLOATING OVER HERO IMAGE --------- */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: url("effects/embers.png") repeat;
+    opacity: 0.25;
+    animation: embersFloat 25s linear infinite;
+    z-index: 3;
+}
+
+@keyframes embersFloat {
+    from { background-position: 0 0; }
+    to   { background-position: 800px -1200px; }
+}
+
+/* --------- ASH FALLING --------- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: url("effects/ash.png") repeat;
+    opacity: 0.3;
+    animation: ashFall 18s linear infinite;
+    z-index: 2;
+}
+
+@keyframes ashFall {
+    from { background-position: 0 -200px; }
+    to   { background-position: 0 600px; }
+}
+
+/* --------- HERO PARALLAX HOVER --------- */
+.hero-img {
+    transition: transform 3s ease;
+}
+
+.hero:hover .hero-img {
+    transform: scale(1.06) translateY(-12px);
+}
+
+/* --------- widescreen watermark scanline --------- */
+.hero-text-watermark {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    font-size: 52px;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(255, 40, 40, 0.35);
+    text-shadow: 0 0 25px rgba(255,0,0,0.25);
+}
+
+.hero-text-watermark::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(255,0,0,0.7), transparent);
+    animation: scanline 4s infinite;
+}
+
+@keyframes scanline {
+    0%   { top: 0%; opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { top: 80%; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* --------- SCREEN GLITCH --------- */
+@keyframes glitch {
+    0% { transform: translate(0,0); opacity:1; }
+    15% { transform: translate(-2px,1px); opacity:.9; }
+    35% { transform: translate(3px,-2px); opacity:1; }
+    55% { transform: translate(-1px,2px); opacity:.85; }
+    75% { transform: translate(1px,-1px); opacity:1; }
+    100% { transform: translate(0,0); opacity:1; }
+}
+
+.hero {
+    animation: glitch 6s infinite;
+}
