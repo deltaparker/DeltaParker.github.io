@@ -1,46 +1,58 @@
-/* Survivors' Journal Theme */
+/* ============================
+   CVB2.0 — Survivor Journal Style
+   ============================ */
 
 body {
     margin: 0;
     padding: 0;
-    background: #0d0d0d;
+    background: url("b83499b3-1128-42bd-a459-8e9073a9cae4.png");
+    background-size: cover;
+    background-attachment: fixed;
     font-family: "Courier New", monospace;
+    color: #2b1b05;
 }
 
-/* Journal wrapper */
+/* Journal container */
 .journal {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background: url("paper_bg.jpg");
-    background-size: cover;
+    background: rgba(0, 0, 0, 0.25);
     border-radius: 12px;
-    box-shadow: 0 0 45px rgba(0,0,0,0.9);
-    position: relative;
+    box-shadow: 0 0 40px rgba(0,0,0,0.9);
 }
 
-/* Headline */
+/* Title */
 .title {
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
     font-size: 2.6em;
-    color: #3b1a0c;
-    text-shadow: 0 0 4px #e0d3b8;
+    color: #4a1f06;
+    text-shadow: 0 0 5px #c9b08a;
 }
 
+/* Intro text */
 .intro {
-    color: #3b1a0c;
-    font-size: 1.1em;
-    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #3a200c;
 }
 
-/* Entry boxes */
+/* Divider */
+.divider {
+    border: none;
+    height: 2px;
+    background: #7a3a1a;
+    margin: 20px 0 35px 0;
+}
+
+/* Journal entry */
 .entry {
-    background: rgba(255, 248, 230, 0.75);
-    padding: 20px;
-    margin: 40px 0;
-    border-left: 6px solid #7a3a1a;
-    border-radius: 10px;
-    box-shadow: -6px 6px 25px rgba(0,0,0,0.6);
+    background: url("b83499b3-1128-42bd-a459-8e9073a9cae4.png");
+    background-size: cover;
+    padding: 25px;
+    margin: 50px 0;
+    border-left: 8px solid #6a3a1a;
+    border-radius: 8px;
+    box-shadow: -6px 6px 20px rgba(0,0,0,0.7);
     position: relative;
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
 }
@@ -50,28 +62,3 @@ body {
     width: 130px;
     position: absolute;
     top: -20px;
-    opacity: 0.95;
-}
-
-.tape-left { left: -10px; }
-.tape-right { right: -10px; }
-
-/* Back link */
-.back {
-    font-size: 1.2em;
-    text-decoration: none;
-    color: #4a0c0c;
-}
-
-.back:hover {
-    color: red;
-}
-
-/* Mobile fixes */
-@media (max-width: 700px) {
-    .journal {
-        padding: 20px;
-        margin: 15px;
-    }
-    .tape { width: 90px; }
-}
