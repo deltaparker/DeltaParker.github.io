@@ -1,190 +1,88 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ======================================
+   CVB 2.01 — Survivor Journal Improved
+   ====================================== */
 
 body {
-    background: #000;
-    color: #fff;
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("images/506f90d6-441a-40b8-9306-3c47e996adea.png");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: "Courier New", monospace;
+    color: #2c1a0e;
 }
 
-/* -------------------------------------------------
-   HEADER
-------------------------------------------------- */
-header {
-    width: 100%;
-    background: #000;
-    border-bottom: 3px solid red;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+.journal {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 0 80px rgba(0,0,0,0.9);
 }
 
-.logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: red;
-    text-shadow: 0 0 15px red, 0 0 30px red;
+/* Title */
+.title {
+    font-size: 3rem;
+    font-family: "Bradley Hand", "Comic Sans MS", cursive;
+    color: #e8c39e;
+    text-shadow: 0 0 10px #000, 0 0 5px #6b2c0c;
 }
 
-/* NAVIGATION */
-nav {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+/* Intro text */
+.intro {
+    color: #d8b28c;
+    font-size: 1.15em;
+    margin-bottom: 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: red;
-    text-shadow: 0 0 10px red;
-}
-
-/* BUTTONS */
-.button-group {
-    display: flex;
-    gap: 10px;
-}
-
-.donate-btn,
-.cash-btn {
-    padding: 10px 16px;
-    border-radius: 10px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-/* Blue Donate */
-.donate-btn {
-    background: #007bff;
-    box-shadow: 0 0 15px #007bff;
-}
-
-.donate-btn:hover {
-    background: #2a8dff;
-    box-shadow: 0 0 25px #2a8dff;
-}
-
-/* Green CashApp */
-.cash-btn {
-    background: #00cc44;
-    box-shadow: 0 0 15px #00cc44;
-}
-
-.cash-btn:hover {
-    background: #00e055;
-    box-shadow: 0 0 25px #00e055;
-}
-
-/* -------------------------------------------------
-   HERO SECTION
-------------------------------------------------- */
-
-.hero {
+/* Entry block */
+.entry {
+    background: url("images/506f90d6-441a-40b8-9306-3c47e996adea.png");
+    background-size: cover;
+    padding: 30px;
+    margin: 60px 0;
+    border-left: 12px solid #7b3a17;
+    border-radius: 12px;
+    box-shadow: -8px 8px 30px rgba(0,0,0,0.7);
     position: relative;
-    width: 100%;
-    max-height: 650px;
-    overflow: hidden;
+    font-family: "Bradley Hand", "Comic Sans MS", cursive;
 }
 
-.hero-img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
+/* Tape pieces */
+.tape {
+    width: 140px;
+    position: absolute;
+    top: -30px;
     opacity: 0.95;
 }
 
-.hero-text {
-    position: absolute;
-    top: 40%;
-    width: 100%;
-    text-align: center;
-    text-shadow: 0 0 20px red, 0 0 30px red;
+.tape-left {
+    left: -20px;
+    transform: rotate(-4deg);
 }
 
-.hero-text h1 {
-    font-size: 3.5em;
-    font-weight: bold;
-    color: red;
+.tape-right {
+    right: -20px;
+    transform: rotate(4deg);
 }
 
-.hero-text p {
-    margin-top: 10px;
-    color: #ddd;
-    font-size: 1.4em;
+/* Back link */
+.back {
+    display: block;
+    margin-top: 50px;
+    font-size: 1.3em;
+    color: #d86b5b;
+    text-decoration: none;
 }
 
-/* -------------------------------------------------
-   ASSET GRID
-------------------------------------------------- */
-.section-title {
-    text-align: center;
-    color: red;
-    font-size: 2.4em;
-    margin-top: 40px;
-    text-shadow: 0 0 20px red;
+.back:hover {
+    color: #ff2a2a;
 }
 
-.asset-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px;
-    flex-wrap: wrap;
-}
-
-.asset-card {
-    width: 270px;
-    background: #111;
-    padding: 15px;
-    border-radius: 12px;
-    border: 2px solid red;
-    text-align: center;
-    box-shadow: 0 0 20px red;
-    transition: 0.2s;
-}
-
-.asset-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 35px red;
-}
-
-.asset-card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* MOBILE FIXES */
-@media (max-width: 900px) {
-
-    header {
-        justify-content: center;
-        text-align: center;
-        gap: 15px;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2.3em;
-    }
-
-    .hero-text p {
-        font-size: 1.1em;
-    }
+/* Mobile adjustments */
+@media(max-width: 700px) {
+    .journal { padding: 20px; }
+    .entry { padding: 20px; }
+    .tape { width: 90px; }
 }
