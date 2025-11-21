@@ -1,16 +1,12 @@
-/* ================================
-   DESKTOP HEADER — More Left Shift
-   ================================ */
+/* ====================================================
+   NEON HEADER v4.0 — Logo Centered, Nav Centered,
+   Buttons Right (Style C)
+   ==================================================== */
+
+/* HEADER WRAPPER */
 header {
     width: 100%;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    /* increase left shift (was -20px) */
-    transform: translateX(-40px);
-
+    padding: 20px 20px 10px 20px;
     background: rgba(0, 0, 0, 0.85);
     position: fixed;
     top: 0;
@@ -18,4 +14,114 @@ header {
     z-index: 999;
     box-shadow: 0 0 25px #ff0000;
     border-bottom: 2px solid rgba(255,0,0,0.4);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGO CENTERED */
+.logo {
+    font-size: 42px;
+    font-weight: bold;
+    color: #ff1f1f;
+    text-shadow:
+        0 0 6px #ff1f1f,
+        0 0 15px #ff0000,
+        0 0 35px #8b0000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* NAV BAR CENTERED */
+nav {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #ffcccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px red;
+}
+
+/* DONATE / CASHAPP — RIGHT SIDE FLOAT */
+.button-group {
+    position: absolute;
+    right: 25px;
+    top: 22px;
+
+    display: flex;
+    gap: 12px;
+}
+
+.button-group a {
+    padding: 10px 18px;
+    background: #8b0000;
+    color: white;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 0 12px red;
+    transition: 0.2s ease;
+}
+
+.button-group a:hover {
+    background: #ff0000;
+    box-shadow: 0 0 22px #ff3333;
+}
+
+/* ====================================================
+   MOBILE TWEAKS
+   ==================================================== */
+@media (max-width: 750px) {
+
+    header {
+        padding-bottom: 18px;
+    }
+
+    .logo {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+
+    /* Move donate/cashapp below nav on mobile */
+    .button-group {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* DONATE higher (more up) */
+    .donate-btn {
+        margin-bottom: 16px;
+        transform: translateY(-12px);
+    }
+
+    /* CASHAPP lower (more down) */
+    .cash-btn {
+        margin-top: 16px;
+        transform: translateY(12px);
+    }
 }
