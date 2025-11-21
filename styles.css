@@ -1,13 +1,18 @@
 /* =============================================
-   NEON HEADER v3 — CLEAN, EVEN, RESPONSIVE
+   NEON HEADER v3.1 — With Custom Spacing Tweaks
    =============================================*/
 
+/* DESKTOP HEADER */
 header {
     width: 100%;
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* shift header left slightly (2 bumps) */
+    transform: translateX(-20px);
+
     background: rgba(0, 0, 0, 0.85);
     position: fixed;
     top: 0;
@@ -17,7 +22,7 @@ header {
     border-bottom: 2px solid rgba(255,0,0,0.4);
 }
 
-/* LOGO — Centered neon red */
+/* LOGO */
 .logo {
     font-size: 30px;
     font-weight: bold;
@@ -29,12 +34,13 @@ header {
     white-space: nowrap;
 }
 
-/* NAVIGATION — evenly spaced, centered vertically */
+/* NAVIGATION */
 nav {
     display: flex;
     gap: 18px;
 }
 
+/* NAV LINKS */
 nav a {
     color: #ffcccc;
     text-decoration: none;
@@ -49,7 +55,7 @@ nav a:hover {
     text-shadow: 0 0 10px red;
 }
 
-/* DONATE / CASHAPP BUTTONS — neon glow */
+/* DONATE / CASHAPP BUTTONS (desktop) */
 .button-group {
     display: flex;
     gap: 12px;
@@ -72,16 +78,16 @@ nav a:hover {
 }
 
 
-/* --------------------------------------------
-   MOBILE HEADER FIXES
----------------------------------------------*/
-
+/* ===========================================================
+   MOBILE HEADER TWEAKS (Donate up / CashApp down 2 bumps each)
+   ===========================================================*/
 @media (max-width: 750px) {
 
     header {
         flex-direction: column;
         text-align: center;
         padding: 20px 10px;
+        transform: translateX(0); /* reset shift on mobile */
     }
 
     nav {
@@ -92,11 +98,20 @@ nav a:hover {
     }
 
     .button-group {
-        margin-top: 12px;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 14px;
     }
 
-    .button-group a {
-        padding: 8px 15px;
+    /* DONATE button moves UP 2 bumps */
+    .donate-btn {
+        margin-bottom: 10px;
+        transform: translateY(-10px);
+    }
+
+    /* CASHAPP button moves DOWN 2 bumps */
+    .cash-btn {
+        margin-top: 10px;
+        transform: translateY(10px);
     }
 }
