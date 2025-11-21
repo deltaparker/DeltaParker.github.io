@@ -1,13 +1,29 @@
 /* ====================================================
-   NEON HEADER v4.0 — Logo Centered, Nav Centered,
-   Buttons Right (Style C)
+   Delta Parker Productions — Neon Outbreak Homepage
    ==================================================== */
 
-/* HEADER WRAPPER */
+/* GLOBAL */
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;              /* FULL BLACK BACKGROUND */
+    font-family: Arial, sans-serif;
+    color: #f5f5f5;
+}
+
+/* Remove default link blue */
+a {
+    color: inherit;
+}
+
+/* =========================
+   HEADER (Style C, v4.0)
+   ========================= */
+
 header {
     width: 100%;
     padding: 20px 20px 10px 20px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -20,9 +36,9 @@ header {
     align-items: center;
 }
 
-/* LOGO CENTERED */
+/* Centered neon logo */
 .logo {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: bold;
     color: #ff1f1f;
     text-shadow:
@@ -33,32 +49,32 @@ header {
     text-align: center;
 }
 
-/* NAV BAR CENTERED */
+/* Centered nav below logo */
 nav {
     display: flex;
-    gap: 28px;
-    margin-bottom: 10px;
+    gap: 26px;
+    margin-bottom: 8px;
 }
 
 nav a {
-    color: #ffcccc;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 17px;
     padding: 6px 10px;
     border-radius: 4px;
+    color: #ffdddd;
 }
 
 nav a:hover {
-    color: #fff;
+    color: #ffffff;
     text-shadow: 0 0 10px red;
 }
 
-/* DONATE / CASHAPP — RIGHT SIDE FLOAT */
+/* Donate / CashApp pinned to right */
 .button-group {
     position: absolute;
     right: 25px;
-    top: 22px;
+    top: 18px;
 
     display: flex;
     gap: 12px;
@@ -80,29 +96,123 @@ nav a:hover {
     box-shadow: 0 0 22px #ff3333;
 }
 
-/* ====================================================
+/* =========================
+   HERO SECTION + WATERMARK
+   ========================= */
+
+.hero {
+    margin-top: 170px;  /* clears the fixed header */
+    position: relative;
+    z-index: 1;
+}
+
+.hero-img {
+    width: 100%;
+    display: block;
+}
+
+/* Watermark text over the image */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;   /* so clicks go through */
+}
+
+.hero-text h1 {
+    font-size: 64px;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.12);   /* watermark feel */
+    text-shadow:
+        0 0 8px rgba(255,0,0,0.4),
+        0 0 24px rgba(0,0,0,0.9);
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+.hero-text p {
+    font-size: 20px;
+    color: rgba(255, 200, 200, 0.6);
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+    margin: 0;
+}
+
+/* =========================
+   ASSET SECTION (THEMED)
+   ========================= */
+
+.assets-section {
+    padding: 40px 20px 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px red;
+}
+
+/* Grid of cards */
+.asset-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual asset card */
+.asset-card {
+    background: #111;
+    border-radius: 10px;
+    padding: 18px;
+    width: 280px;
+    box-shadow: 0 0 18px rgba(255,0,0,0.4);
+    border: 1px solid #333;
+}
+
+.asset-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #ffbbbb;
+    text-shadow: 0 0 6px rgba(255,0,0,0.5);
+}
+
+.asset-status {
+    font-weight: bold;
+}
+
+.asset-note {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+/* =========================
    MOBILE TWEAKS
-   ==================================================== */
+   ========================= */
+
 @media (max-width: 750px) {
 
     header {
-        padding-bottom: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
     }
 
     .logo {
-        font-size: 32px;
-        line-height: 38px;
+        font-size: 30px;
+        line-height: 1.2;
     }
 
     nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
-        margin-top: 5px;
-        margin-bottom: 10px;
+        gap: 14px;
+        margin-bottom: 6px;
     }
 
-    /* Move donate/cashapp below nav on mobile */
+    /* Buttons drop under nav on mobile */
     .button-group {
         position: relative;
         right: 0;
@@ -113,15 +223,32 @@ nav a:hover {
         align-items: center;
     }
 
-    /* DONATE higher (more up) */
+    /* push Donate up a bit */
     .donate-btn {
-        margin-bottom: 16px;
-        transform: translateY(-12px);
+        margin-bottom: 10px;
+        transform: translateY(-6px);
     }
 
-    /* CASHAPP lower (more down) */
+    /* push CashApp down a bit */
     .cash-btn {
-        margin-top: 16px;
-        transform: translateY(12px);
+        margin-top: 10px;
+        transform: translateY(6px);
+    }
+
+    .hero {
+        margin-top: 210px; /* more room for stacked header */
+    }
+
+    .hero-text h1 {
+        font-size: 40px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .asset-card {
+        width: 100%;
+        max-width: 320px;
     }
 }
