@@ -2,11 +2,21 @@
    CINEMATIC FX RESTORED — LOCAL ASSET EDITION (GitHub Safe)
    ========================================================= */
 
-/* Global theme */
+/* ---------- GLOBAL ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: #000;
-    color: white;
+    color: #f0f0f0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 sans-serif;
     position: relative;
+    min-height: 100vh;
 }
 
 /* Vignette */
@@ -20,60 +30,7 @@ body::after {
     z-index: 1;
 }
 
-/* --------- LOGO FLICKER --------- */
-.logo {
-    animation: neonFlicker 2.8s infinite alternate;
-}
-
-@keyframes neonFlicker {
-    0%   { opacity: 0.7; text-shadow: 0 0 3px #ff0000; }
-    5%   { opacity: 1;   text-shadow: 0 0 15px #ff0000; }
-    30%  { opacity: 0.6; }
-    70%  { opacity: 1;   text-shadow: 0 0 20px #cc0000; }
-    100% { opacity: 0.85; }
-}
-
-/* --------- RISING SMOKE BEHIND LOGO --------- */
-.logo::before {
-    content: "";
-    position: absolute;
-    top: 60px;
-    left: 50%;
-    width: 180px;
-    height: 260px;
-    background: url("effects/smoke.png") no-repeat center;
-    background-size: contain;
-    opacity: 0.5;
-    transform: translateX(-50%);
-    animation: smokeRise 8s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes smokeRise {
-    0%   { transform: translate(-50%, 40px) scale(1); opacity: .5; }
-    50%  { transform: translate(-50%, -20px) scale(1.2); opacity: .25; }
-    100% { transform: translate(-50%, -80px) scale(1.3); opacity: 0; }
-}
-
-/* --------- EMBERS FLOATING OVER HERO IMAGE --------- */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    background: url("effects/embers.png") repeat;
-    opacity: 0.25;
-    animation: embersFloat 25s linear infinite;
-    z-index: 3;
-}
-
-@keyframes embersFloat {
-    from { background-position: 0 0; }
-    to   { background-position: 800px -1200px; }
-}
-
-/* --------- ASH FALLING --------- */
+/* Ash fall */
 body::before {
     content: "";
     position: fixed;
@@ -91,54 +48,190 @@ body::before {
     to   { background-position: 0 600px; }
 }
 
-/* --------- HERO PARALLAX HOVER --------- */
+/* ---------- HEADER / NAV ---------- */
+
+header {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    padding: 10px 40px 16px;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid rgba(255,0,0,0.4);
+    box-shadow: 0 0 25px #ff0000;
+    z-index: 10;
+}
+
+/* top row: donate / cashapp on right */
+.header-top {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* logo row */
+.logo {
+    position: relative;
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff1f1f;
+    text-shadow:
+        0 0 6px #ff1f1f,
+        0 0 15px #ff0000,
+        0 0 35px #8b0000;
+    animation: neonFlicker 2.8s infinite alternate;
+}
+
+/* rising smoke behind logo */
+.logo::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 180px;
+    height: 260px;
+    background: url("effects/smoke.png") no-repeat center;
+    background-size: contain;
+    opacity: 0.5;
+    transform: translateX(-50%);
+    animation: smokeRise 8s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* navigation row */
+nav {
+    display: flex;
+    gap: 18px;
+}
+
+nav a {
+    color: #ffcccc;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 4px 8px;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px red;
+}
+
+/* donate / cashapp buttons */
+.button-group {
+    display: flex;
+    gap: 12px;
+}
+
+.button-group a {
+    padding: 8px 16px;
+    background: #8b0000;
+    color: white;
+    font-weight: 700;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 0 12px red;
+    animation: pulseGlow 2.4s infinite alternate;
+}
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    margin-top: 130px;
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 35px rgba(0,0,0,0.9);
+    animation: glitch 6s infinite;
+    z-index: 3;
+}
+
 .hero-img {
+    width: 100%;
+    display: block;
     transition: transform 3s ease;
+    filter: brightness(0.9);
+}
+
+/* embers over hero */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: url("effects/embers.png") repeat;
+    opacity: 0.25;
+    animation: embersFloat 25s linear infinite;
+    z-index: 4;
+}
+
+@keyframes embersFloat {
+    from { background-position: 0 0; }
+    to   { background-position: 800px -1200px; }
 }
 
 .hero:hover .hero-img {
     transform: scale(1.06) translateY(-12px);
 }
 
-/* --------- widescreen watermark scanline --------- */
-.hero-text-watermark {
+/* watermark over hero */
+.hero-text {
     position: absolute;
-    top: 20%;
-    width: 100%;
-    font-size: 52px;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    font-weight: bold;
-    color: rgba(255, 40, 40, 0.35);
-    text-shadow: 0 0 25px rgba(255,0,0,0.25);
+    color: rgba(255,240,240,0.95);
+    text-shadow: 0 0 18px rgba(0,0,0,0.9);
+    z-index: 5;
 }
 
-.hero-text-watermark::after {
+.hero-text::after {
     content: "";
     position: absolute;
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, transparent, rgba(255,0,0,0.7), transparent);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,0,0,0.7),
+        transparent
+    );
     animation: scanline 4s infinite;
 }
 
-@keyframes scanline {
-    0%   { top: 0%; opacity: 0; }
-    20%  { opacity: 1; }
-    50%  { top: 80%; opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes neonFlicker {
+    0%   { opacity: 0.7; text-shadow: 0 0 3px #ff0000; }
+    50%  { opacity: 1; text-shadow: 0 0 20px red; }
+    100% { opacity: 0.8; }
 }
 
-/* --------- SCREEN GLITCH --------- */
+@keyframes smokeRise {
+    0%   { transform: translate(-50%, 40px) scale(1);   opacity: .5; }
+    50%  { transform: translate(-50%, -20px) scale(1.2); opacity: .25; }
+    100% { transform: translate(-50%, -80px) scale(1.3); opacity: 0; }
+}
+
+@keyframes pulseGlow {
+    0%   { box-shadow: 0 0 12px red; }
+    100% { box-shadow: 0 0 28px #ff3333; }
+}
+
 @keyframes glitch {
-    0% { transform: translate(0,0); opacity:1; }
-    15% { transform: translate(-2px,1px); opacity:.9; }
-    35% { transform: translate(3px,-2px); opacity:1; }
-    55% { transform: translate(-1px,2px); opacity:.85; }
-    75% { transform: translate(1px,-1px); opacity:1; }
-    100% { transform: translate(0,0); opacity:1; }
-}
-
-.hero {
-    animation: glitch 6s infinite;
+    0%   { transform: translate(0,0); }
+    20%  { transform: translate(-2px,1px); }
+    40%  { transform: translate(2px,-1px); }
+    60%  { transform: translate(-1px,2px); }
+    100% { transform: translate(0,0); }
 }
