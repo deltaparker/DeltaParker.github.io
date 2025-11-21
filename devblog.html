@@ -1,255 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dev Blog — Delta Parker Productions</title>
-
-    <!-- Local styles just for the Dev Blog so other pages stay untouched -->
-    <style>
-        /* -------------------------------
-           GLOBAL DEV BLOG STYLES
-        --------------------------------*/
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: #000;
-            color: #eee;
-            font-family: Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        a {
-            color: #ff4444;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* -------------------------------
-           PAGE WRAPPER
-        --------------------------------*/
-        .devblog-page {
-            min-height: 100vh;
-            padding: 40px 15px 60px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .devblog-container {
-            width: 100%;
-            max-width: 960px;
-        }
-
-        /* -------------------------------
-           HEADER / TITLE
-        --------------------------------*/
-        .devblog-title {
-            text-align: center;
-            font-size: 2.6rem;
-            color: #ff2a2a;
-            text-shadow: 0 0 12px #ff0000, 0 0 28px #ff0000;
-            margin-bottom: 10px;
-        }
-
-        .devblog-subtitle {
-            text-align: center;
-            color: #bbbbbb;
-            font-size: 0.98rem;
-            max-width: 620px;
-            margin: 0 auto 30px;
-        }
-
-        .devblog-divider {
-            border: none;
-            border-top: 2px solid #ff0000;
-            margin: 20px auto 30px;
-            max-width: 760px;
-        }
-
-        /* -------------------------------
-           UPDATE LIST
-        --------------------------------*/
-        .update-list {
-            display: flex;
-            flex-direction: column;
-            gap: 18px;
-        }
-
-        .update-card {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 16px;
-            padding: 18px 20px;
-            background: #0b0b0b;
-            border: 1px solid #ff1f1f;
-            border-radius: 14px;
-            box-shadow: 0 0 14px #ff000055;
-            transition: transform 0.18s ease-out, box-shadow 0.18s ease-out,
-                        background 0.18s ease-out, border-color 0.18s ease-out;
-        }
-
-        .update-card:hover {
-            transform: translateY(-2px);
-            background: #151515;
-            border-color: #ff3a3a;
-            box-shadow: 0 0 26px #ff000088;
-        }
-
-        .update-icon {
-            font-size: 1.8rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-        }
-
-        .update-content {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .update-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #ff4444;
-        }
-
-        .update-meta {
-            font-size: 0.8rem;
-            color: #888;
-        }
-
-        .update-body {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            color: #e4e4e4;
-        }
-
-        /* -------------------------------
-           FOOTER / BACK LINK
-        --------------------------------*/
-        .back-link-wrapper {
-            margin-top: 32px;
-            text-align: left;
-        }
-
-        .back-link {
-            display: inline-block;
-            color: #ff4444;
-            font-size: 0.95rem;
-            text-shadow: 0 0 8px #ff0000;
-        }
-
-        .back-link:hover {
-            color: #ffffff;
-            text-shadow: 0 0 12px #ff0000, 0 0 22px #ff0000;
-        }
-
-        /* -------------------------------
-           MOBILE TWEAKS
-        --------------------------------*/
-        @media (max-width: 768px) {
-            .devblog-page {
-                padding: 30px 10px 40px;
-            }
-
-            .devblog-title {
-                font-size: 2.1rem;
-            }
-
-            .devblog-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 22px;
-            }
-
-            .update-card {
-                padding: 14px 14px;
-                gap: 12px;
-            }
-
-            .update-title {
-                font-size: 1.05rem;
-            }
-
-            .update-body {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Blog — Survivor Log</title>
+    <link rel="stylesheet" href="devblog.css">
 </head>
 <body>
 
-    <div class="devblog-page">
-        <main class="devblog-container">
-            <!-- HEADER -->
-            <h1 class="devblog-title">Dev Blog</h1>
-            <p class="devblog-subtitle">
-                Welcome to the development log. This is where I document updates, progress,
-                and the small victories that push the project forward through the apocalypse.
-            </p>
-            <hr class="devblog-divider" />
+<div class="journal-container">
 
-            <!-- UPDATE CARDS -->
-            <section class="update-list">
+    <h1 class="journal-title">📘 Survivor’s Development Log</h1>
+    <p class="journal-intro">
+        These pages contain the recovered notes of the lone developer surviving the outbreak.  
+        Progress, discoveries, and breakthroughs documented as civilization collapses.
+    </p>
 
-                <!-- UPDATE 1 -->
-                <article class="update-card">
-                    <div class="update-icon">📡</div>
-                    <div class="update-content">
-                        <h2 class="update-title">Update #1 — Site Framework Online</h2>
-                        <p class="update-meta">Status: Live • Notes: Core structure online</p>
-                        <p class="update-body">
-                            The website is now fully functional on desktop and mobile.
-                            Hero image, neon UI, and main navigation are all online.
-                            This is the base camp for future development logs and project updates.
-                        </p>
-                    </div>
-                </article>
+    <hr class="divider">
 
-                <!-- UPDATE 2 -->
-                <article class="update-card">
-                    <div class="update-icon">🧱</div>
-                    <div class="update-content">
-                        <h2 class="update-title">Update #2 — Asset System Created</h2>
-                        <p class="update-meta">Status: In Progress • Notes: Visual pipeline</p>
-                        <p class="update-body">
-                            Asset preview cards were added to the homepage. These slots will
-                            showcase units, structures, and other RTS assets as they’re created.
-                            This is the start of a proper pipeline from concept to playable content.
-                        </p>
-                    </div>
-                </article>
-
-                <!-- UPDATE 3 -->
-                <article class="update-card">
-                    <div class="update-icon">🔊</div>
-                    <div class="update-content">
-                        <h2 class="update-title">Update #3 — Audio Pipeline Started</h2>
-                        <p class="update-meta">Status: First Pass • Notes: Zombie growl online</p>
-                        <p class="update-body">
-                            The first zombie growl sound has been created and exported as a
-                            game-ready <strong>.ogg</strong> file for Godot and Blender.
-                            This marks the beginning of the custom audio pipeline for the project:
-                            unique sounds for units, UI, and the chaos of the outbreak.
-                        </p>
-                    </div>
-                </article>
-
-            </section>
-
-            <!-- BACK LINK -->
-            <div class="back-link-wrapper">
-                <a href="index.html" class="back-link">← Back to Home</a>
-            </div>
-        </main>
+    <!-- UPDATE 1 -->
+    <div class="entry">
+        <img src="https://i.imgur.com/YnZb3pL.png" class="tape tape-left">
+        <h2>🗒️ Update #1 — Site Framework Online</h2>
+        <p>
+            The base camp is established. Homepage and mobile compatibility achieved.  
+            This marks the beginning of the long road ahead.
+        </p>
     </div>
+
+    <!-- UPDATE 2 -->
+    <div class="entry">
+        <img src="https://i.imgur.com/YnZb3pL.png" class="tape tape-right">
+        <h2>🗒️ Update #2 — Asset System Created</h2>
+        <p>
+            Asset preview structures are now in place. Soon, images, AI renders, and 3D models  
+            will appear here as field intel is gathered.
+        </p>
+    </div>
+
+    <!-- UPDATE 3 -->
+    <div class="entry">
+        <img src="https://i.imgur.com/YnZb3pL.png" class="tape tape-left">
+        <h2>🗒️ Update #3 — Audio Pipeline Started</h2>
+        <p>
+            First zombie growl created. Audio pipeline now works in Blender + Godot.  
+            More sounds will be recorded as the horde grows louder.
+        </p>
+    </div>
+
+    <a href="index.html" class="back-link">← Return to Safe Zone</a>
+
+</div>
 
 </body>
 </html>
