@@ -1,88 +1,26 @@
-/* ======================================
-   CVB 2.01 — Survivor Journal Improved
-   ====================================== */
+/* ===================================================
+   Delta Parker Productions — Neon Apocalypse Homepage
+   =================================================== */
 
+/* Reset / Base */
 body {
     margin: 0;
     padding: 0;
-    background: url("images/506f90d6-441a-40b8-9306-3c47e996adea.png");
-    background-size: cover;
-    background-attachment: fixed;
-    font-family: "Courier New", monospace;
-    color: #2c1a0e;
+    background: #000;
+    font-family: Arial, sans-serif;
+    color: #fff;
 }
 
-.journal {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 40px;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 16px;
-    box-shadow: 0 0 80px rgba(0,0,0,0.9);
-}
-
-/* Title */
-.title {
-    font-size: 3rem;
-    font-family: "Bradley Hand", "Comic Sans MS", cursive;
-    color: #e8c39e;
-    text-shadow: 0 0 10px #000, 0 0 5px #6b2c0c;
-}
-
-/* Intro text */
-.intro {
-    color: #d8b28c;
-    font-size: 1.15em;
-    margin-bottom: 20px;
-}
-
-/* Entry block */
-.entry {
-    background: url("images/506f90d6-441a-40b8-9306-3c47e996adea.png");
-    background-size: cover;
-    padding: 30px;
-    margin: 60px 0;
-    border-left: 12px solid #7b3a17;
-    border-radius: 12px;
-    box-shadow: -8px 8px 30px rgba(0,0,0,0.7);
-    position: relative;
-    font-family: "Bradley Hand", "Comic Sans MS", cursive;
-}
-
-/* Tape pieces */
-.tape {
-    width: 140px;
-    position: absolute;
-    top: -30px;
-    opacity: 0.95;
-}
-
-.tape-left {
-    left: -20px;
-    transform: rotate(-4deg);
-}
-
-.tape-right {
-    right: -20px;
-    transform: rotate(4deg);
-}
-
-/* Back link */
-.back {
-    display: block;
-    margin-top: 50px;
-    font-size: 1.3em;
-    color: #d86b5b;
-    text-decoration: none;
-}
-
-.back:hover {
-    color: #ff2a2a;
-}
-
-/* Mobile adjustments */
-@media(max-width: 700px) {
-    .journal { padding: 20px; }
-    .entry { padding: 20px; }
-    .tape { width: 90px; }
-}
+/* HEADER */
+header {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    box
