@@ -115,3 +115,16 @@ nav a:hover {
         transform: translateY(10px);
     }
 }
+/* FIX HERO OVERLAP UNDER HEADER */
+.hero {
+    margin-top: 140px;  /* moves hero down on desktop */
+    position: relative;
+    z-index: 1;
+}
+
+/* MOBILE FIX */
+@media (max-width: 750px) {
+    .hero {
+        margin-top: 180px; /* more space for stacked header */
+    }
+}
