@@ -1,6 +1,6 @@
-/* ============================
-   CVB2.0 — Survivor Journal Style
-   ============================ */
+/* ======================================
+   CVB 2.01 — Survivor Journal (Hero Image)
+   ====================================== */
 
 body {
     margin: 0;
@@ -9,34 +9,31 @@ body {
     background-size: cover;
     background-attachment: fixed;
     font-family: "Courier New", monospace;
-    color: #2b1b05;
+    color: #2c1a0e;
 }
 
-/* Journal container */
 .journal {
     max-width: 900px;
-    margin: 40px auto;
+    margin: 60px auto;
     padding: 40px;
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.55);
+    border-radius: 16px;
+    box-shadow: 0 0 80px rgba(0,0,0,0.9);
 }
 
-/* Title */
 .title {
+    font-size: 3rem;
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
-    font-size: 2.6em;
-    color: #4a1f06;
-    text-shadow: 0 0 5px #c9b08a;
+    color: #e8c39e;
+    text-shadow: 0 0 10px #000, 0 0 5px #6b2c0c;
 }
 
-/* Intro text */
 .intro {
-    font-size: 1.2em;
-    color: #3a200c;
+    color: #d8b28c;
+    font-size: 1.15em;
+    margin-bottom: 20px;
 }
 
-/* Divider */
 .divider {
     border: none;
     height: 2px;
@@ -44,21 +41,36 @@ body {
     margin: 20px 0 35px 0;
 }
 
-/* Journal entry */
 .entry {
     background: url("b83499b3-1128-42bd-a459-8e9073a9cae4.png");
     background-size: cover;
-    padding: 25px;
-    margin: 50px 0;
-    border-left: 8px solid #6a3a1a;
-    border-radius: 8px;
-    box-shadow: -6px 6px 20px rgba(0,0,0,0.7);
+    padding: 30px;
+    margin: 60px 0;
+    border-left: 12px solid #7b3a17;
+    border-radius: 12px;
+    box-shadow: -8px 8px 30px rgba(0,0,0,0.7);
     position: relative;
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
 }
 
-/* Tape graphics */
+/* If you add tape images later, they go here */
 .tape {
-    width: 130px;
-    position: absolute;
-    top: -20px;
+    display: none;
+}
+
+.back {
+    display: block;
+    margin-top: 50px;
+    font-size: 1.3em;
+    color: #d86b5b;
+    text-decoration: none;
+}
+
+.back:hover {
+    color: #ff2a2a;
+}
+
+@media(max-width: 700px) {
+    .journal { padding: 20px; }
+    .entry { padding: 20px; }
+}
