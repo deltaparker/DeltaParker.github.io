@@ -1,0 +1,110 @@
+/* ------------------------------
+   SURVIVOR'S NOTEBOOK THEME
+------------------------------ */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #111;
+    font-family: "Courier New", monospace;
+    color: #2b1b05;
+}
+
+/* Journal container */
+.journal-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: url("https://i.imgur.com/tgA5K2y.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    position: relative;
+}
+
+/* Flashlight vignette */
+.journal-container::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.25), transparent 70%);
+    pointer-events: none;
+}
+
+/* Header */
+.journal-title {
+    font-size: 2.4em;
+    font-family: "Bradley Hand", "Comic Sans MS", cursive;
+    color: #5b2e0d;
+    text-shadow: 0 0 3px #d5c4a1;
+}
+
+/* Intro paragraph */
+.journal-intro {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+/* Divider */
+.divider {
+    border: none;
+    height: 2px;
+    background: #8a4a1e;
+    margin: 25px 0;
+}
+
+/* Entry box */
+.entry {
+    background: rgba(255,255,245,0.75);
+    padding: 20px;
+    margin: 35px 0;
+    border-radius: 10px;
+    border: 2px solid #8b5a33;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+    position: relative;
+    font-family: "Bradley Hand", "Comic Sans MS", cursive;
+}
+
+/* Tape graphics */
+.tape {
+    width: 120px;
+    position: absolute;
+    top: -18px;
+}
+
+.tape-left { left: -10px; }
+.tape-right { right: -10px; }
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 1.3em;
+    color: #5a0f0f;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: red;
+    text-shadow: 0 0 5px red;
+}
+
+/* ------------------------------
+   MOBILE VIEW FIXES
+------------------------------ */
+@media (max-width: 700px) {
+    .journal-container {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    .entry {
+        font-size: 1.05em;
+    }
+
+    .tape {
+        width: 90px;
+    }
+}
