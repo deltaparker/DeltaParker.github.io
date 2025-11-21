@@ -1,8 +1,6 @@
-/* =============================================
-   NEON HEADER v3.1 — With Custom Spacing Tweaks
-   =============================================*/
-
-/* DESKTOP HEADER */
+/* ================================
+   DESKTOP HEADER — More Left Shift
+   ================================ */
 header {
     width: 100%;
     padding: 20px 40px;
@@ -10,8 +8,8 @@ header {
     justify-content: space-between;
     align-items: center;
 
-    /* shift header left slightly (2 bumps) */
-    transform: translateX(-20px);
+    /* increase left shift (was -20px) */
+    transform: translateX(-40px);
 
     background: rgba(0, 0, 0, 0.85);
     position: fixed;
@@ -20,111 +18,4 @@ header {
     z-index: 999;
     box-shadow: 0 0 25px #ff0000;
     border-bottom: 2px solid rgba(255,0,0,0.4);
-}
-
-/* LOGO */
-.logo {
-    font-size: 30px;
-    font-weight: bold;
-    color: #ff1f1f;
-    text-shadow:
-        0 0 6px #ff1f1f,
-        0 0 15px #ff0000,
-        0 0 35px #8b0000;
-    white-space: nowrap;
-}
-
-/* NAVIGATION */
-nav {
-    display: flex;
-    gap: 18px;
-}
-
-/* NAV LINKS */
-nav a {
-    color: #ffcccc;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 6px 10px;
-    border-radius: 4px;
-}
-
-nav a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px red;
-}
-
-/* DONATE / CASHAPP BUTTONS (desktop) */
-.button-group {
-    display: flex;
-    gap: 12px;
-}
-
-.button-group a {
-    padding: 10px 18px;
-    background: #8b0000;
-    color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 0 0 12px red;
-    transition: 0.2s ease;
-}
-
-.button-group a:hover {
-    background: #ff0000;
-    box-shadow: 0 0 22px #ff3333;
-}
-
-
-/* ===========================================================
-   MOBILE HEADER TWEAKS (Donate up / CashApp down 2 bumps each)
-   ===========================================================*/
-@media (max-width: 750px) {
-
-    header {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px 10px;
-        transform: translateX(0); /* reset shift on mobile */
-    }
-
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-        margin-top: 10px;
-    }
-
-    .button-group {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 14px;
-    }
-
-    /* DONATE button moves UP 2 bumps */
-    .donate-btn {
-        margin-bottom: 10px;
-        transform: translateY(-10px);
-    }
-
-    /* CASHAPP button moves DOWN 2 bumps */
-    .cash-btn {
-        margin-top: 10px;
-        transform: translateY(10px);
-    }
-}
-/* FIX HERO OVERLAP UNDER HEADER */
-.hero {
-    margin-top: 140px;  /* moves hero down on desktop */
-    position: relative;
-    z-index: 1;
-}
-
-/* MOBILE FIX */
-@media (max-width: 750px) {
-    .hero {
-        margin-top: 180px; /* more space for stacked header */
-    }
 }
