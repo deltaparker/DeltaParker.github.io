@@ -1,254 +1,190 @@
-/* ====================================================
-   Delta Parker Productions — Neon Outbreak Homepage
-   ==================================================== */
+/* =========================================================
+   CINEMATIC PACK v2.0 — Delta Parker Productions
+   Apocalypse AAA FX: smoke, ashes, embers, scanline, glitch
+   ========================================================= */
 
-/* GLOBAL */
+
+/* ===========================
+   1. GLOBAL BLACK THEME + VIGNETTE
+   =========================== */
 body {
-    margin: 0;
-    padding: 0;
-    background: #000;              /* FULL BLACK BACKGROUND */
-    font-family: Arial, sans-serif;
-    color: #f5f5f5;
-}
-
-/* Remove default link blue */
-a {
-    color: inherit;
-}
-
-/* =========================
-   HEADER (Style C, v4.0)
-   ========================= */
-
-header {
-    width: 100%;
-    padding: 20px 20px 10px 20px;
-    background: rgba(0, 0, 0, 0.9);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    box-shadow: 0 0 25px #ff0000;
-    border-bottom: 2px solid rgba(255,0,0,0.4);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Centered neon logo */
-.logo {
-    font-size: 40px;
-    font-weight: bold;
-    color: #ff1f1f;
-    text-shadow:
-        0 0 6px #ff1f1f,
-        0 0 15px #ff0000,
-        0 0 35px #8b0000;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* Centered nav below logo */
-nav {
-    display: flex;
-    gap: 26px;
-    margin-bottom: 8px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 17px;
-    padding: 6px 10px;
-    border-radius: 4px;
-    color: #ffdddd;
-}
-
-nav a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px red;
-}
-
-/* Donate / CashApp pinned to right */
-.button-group {
-    position: absolute;
-    right: 25px;
-    top: 18px;
-
-    display: flex;
-    gap: 12px;
-}
-
-.button-group a {
-    padding: 10px 18px;
-    background: #8b0000;
+    background: #000 !important;
     color: white;
-    font-weight: bold;
-    border-radius: 6px;
-    text-decoration: none;
-    box-shadow: 0 0 12px red;
-    transition: 0.2s ease;
-}
-
-.button-group a:hover {
-    background: #ff0000;
-    box-shadow: 0 0 22px #ff3333;
-}
-
-/* =========================
-   HERO SECTION + WATERMARK
-   ========================= */
-
-.hero {
-    margin-top: 170px;  /* clears the fixed header */
     position: relative;
+}
+
+/* Dark apocalypse vignette */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 45%, rgba(0,0,0,0.85));
+    z-index: 2;
+}
+
+/* ===========================
+   2. FLICKERING NEON LOGO
+   =========================== */
+.logo {
+    animation: neonFlicker 2.8s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%   { opacity: 0.75; text-shadow: 0 0 3px #ff0000; }
+    5%   { opacity: 1; text-shadow: 0 0 12px #ff0000, 0 0 25px #cc0000; }
+    12%  { opacity: 0.6; }
+    25%  { opacity: 1; text-shadow: 0 0 25px #ff1111; }
+    60%  { opacity: 0.9; text-shadow: 0 0 40px #aa0000; }
+    100% { opacity: 0.82; text-shadow: 0 0 18px #ff2222; }
+}
+
+
+/* ===========================
+   3. SMOKE BEHIND LOGO
+   =========================== */
+.logo-smoke {
+    position: relative;
+}
+
+.logo-smoke::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    width: 140px;
+    height: 220px;
+    background: url("https://i.imgur.com/5pR0Svt.png") no-repeat center;
+    background-size: contain;
+    opacity: 0.45;
+    transform: translateX(-50%);
+    animation: smokeRise 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes smokeRise {
+    0%   { transform: translate(-50%, 30px) scale(1);   opacity: 0.5; }
+    50%  { transform: translate(-50%, -20px) scale(1.2); opacity: 0.25; }
+    100% { transform: translate(-50%, -70px) scale(1.3); opacity: 0; }
+}
+
+
+/* ===========================
+   4. EMBERS FLOATING OVER HERO IMAGE
+   =========================== */
+.hero::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("https://i.imgur.com/evrjEGo.png") repeat;
+    opacity: 0.25;
+    animation: embersFloat 25s linear infinite;
+    z-index: 3;
+}
+
+@keyframes embersFloat {
+    from { background-position: 0 0; }
+    to   { background-position: 800px -1200px; }
+}
+
+
+/* ===========================
+   5. ASH FALLING FROM SKY
+   =========================== */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    background: url("https://i.imgur.com/CJ8YhAt.png") repeat;
+    opacity: 0.4;
+    animation: ashFall 15s linear infinite;
     z-index: 1;
 }
 
+@keyframes ashFall {
+    from { background-position: 0 -200px; }
+    to   { background-position: 0 600px; }
+}
+
+
+/* ===========================
+   6. HERO IMAGE PARALLAX HOVER
+   =========================== */
 .hero-img {
-    width: 100%;
-    display: block;
+    transition: transform 3s ease;
 }
 
-/* Watermark text over the image */
-.hero-text {
+.hero:hover .hero-img {
+    transform: scale(1.06) translateY(-10px);
+}
+
+
+/* ===========================
+   7. SCANLINE ON WATERMARK
+   =========================== */
+.hero-text-watermark {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    width: 100%;
     text-align: center;
-    pointer-events: none;   /* so clicks go through */
-}
-
-.hero-text h1 {
-    font-size: 64px;
-    letter-spacing: 4px;
-    color: rgba(255, 255, 255, 0.12);   /* watermark feel */
-    text-shadow:
-        0 0 8px rgba(255,0,0,0.4),
-        0 0 24px rgba(0,0,0,0.9);
-    text-transform: uppercase;
-    margin: 0 0 10px 0;
-}
-
-.hero-text p {
-    font-size: 20px;
-    color: rgba(255, 200, 200, 0.6);
-    text-shadow: 0 0 10px rgba(0,0,0,0.8);
-    margin: 0;
-}
-
-/* =========================
-   ASSET SECTION (THEMED)
-   ========================= */
-
-.assets-section {
-    padding: 40px 20px 60px 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.section-title {
-    font-size: 30px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px red;
-}
-
-/* Grid of cards */
-.asset-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Individual asset card */
-.asset-card {
-    background: #111;
-    border-radius: 10px;
-    padding: 18px;
-    width: 280px;
-    box-shadow: 0 0 18px rgba(255,0,0,0.4);
-    border: 1px solid #333;
-}
-
-.asset-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #ffbbbb;
-    text-shadow: 0 0 6px rgba(255,0,0,0.5);
-}
-
-.asset-status {
+    font-size: 52px;
     font-weight: bold;
+    color: rgba(255, 50, 50, 0.45);
+    text-shadow: 0 0 25px rgba(255,0,0,0.4);
+    letter-spacing: 3px;
+    user-select: none;
+    pointer-events: none;
 }
 
-.asset-note {
-    font-size: 14px;
-    color: #cccccc;
+.hero-text-watermark::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(255,0,0,0.7), transparent);
+    animation: scanline 4.5s infinite;
 }
 
-/* =========================
-   MOBILE TWEAKS
-   ========================= */
+@keyframes scanline {
+    0%   { top: 0%; opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { top: 80%; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
 
-@media (max-width: 750px) {
 
-    header {
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
+/* ===========================
+   8. DONATE/CASHAPP DEMON PULSE
+   =========================== */
+.button-group a {
+    animation: pulseGlow 2.4s infinite alternate;
+}
 
-    .logo {
-        font-size: 30px;
-        line-height: 1.2;
-    }
+@keyframes pulseGlow {
+    0%   { box-shadow: 0 0 12px red; }
+    100% { box-shadow: 0 0 28px #ff3333; }
+}
 
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 14px;
-        margin-bottom: 6px;
-    }
 
-    /* Buttons drop under nav on mobile */
-    .button-group {
-        position: relative;
-        right: 0;
-        top: 0;
-        margin-top: 10px;
+/* ===========================
+   9. APOCALYPSE SCREEN GLITCH
+   =========================== */
+@keyframes glitch {
+    0% { transform: translate(0,0); opacity:1; }
+    10% { transform: translate(-2px,1px); opacity:0.9; }
+    20% { transform: translate(3px,-2px); opacity:1; }
+    30% { transform: translate(-1px,2px); }
+    40% { transform: translate(1px,-1px); opacity:0.85; }
+    50% { transform: translate(0,0); opacity:1; }
+    100% { transform: translate(0,0); }
+}
 
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* push Donate up a bit */
-    .donate-btn {
-        margin-bottom: 10px;
-        transform: translateY(-6px);
-    }
-
-    /* push CashApp down a bit */
-    .cash-btn {
-        margin-top: 10px;
-        transform: translateY(6px);
-    }
-
-    .hero {
-        margin-top: 210px; /* more room for stacked header */
-    }
-
-    .hero-text h1 {
-        font-size: 40px;
-    }
-
-    .hero-text p {
-        font-size: 16px;
-    }
-
-    .asset-card {
-        width: 100%;
-        max-width: 320px;
-    }
+.hero {
+    animation: glitch 6s infinite;
 }
