@@ -1,110 +1,77 @@
-/* ------------------------------
-   SURVIVOR'S NOTEBOOK THEME
------------------------------- */
+/* Survivors' Journal Theme */
 
 body {
     margin: 0;
     padding: 0;
-    background: #111;
+    background: #0d0d0d;
     font-family: "Courier New", monospace;
-    color: #2b1b05;
 }
 
-/* Journal container */
-.journal-container {
+/* Journal wrapper */
+.journal {
     max-width: 900px;
     margin: 40px auto;
     padding: 40px;
-    background: url("https://i.imgur.com/tgA5K2y.jpg");
+    background: url("paper_bg.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
     border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    box-shadow: 0 0 45px rgba(0,0,0,0.9);
     position: relative;
 }
 
-/* Flashlight vignette */
-.journal-container::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% 30%, rgba(255,255,255,0.25), transparent 70%);
-    pointer-events: none;
-}
-
-/* Header */
-.journal-title {
-    font-size: 2.4em;
+/* Headline */
+.title {
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
-    color: #5b2e0d;
-    text-shadow: 0 0 3px #d5c4a1;
+    font-size: 2.6em;
+    color: #3b1a0c;
+    text-shadow: 0 0 4px #e0d3b8;
 }
 
-/* Intro paragraph */
-.journal-intro {
-    margin-bottom: 20px;
+.intro {
+    color: #3b1a0c;
     font-size: 1.1em;
+    margin-bottom: 15px;
 }
 
-/* Divider */
-.divider {
-    border: none;
-    height: 2px;
-    background: #8a4a1e;
-    margin: 25px 0;
-}
-
-/* Entry box */
+/* Entry boxes */
 .entry {
-    background: rgba(255,255,245,0.75);
+    background: rgba(255, 248, 230, 0.75);
     padding: 20px;
-    margin: 35px 0;
+    margin: 40px 0;
+    border-left: 6px solid #7a3a1a;
     border-radius: 10px;
-    border: 2px solid #8b5a33;
-    box-shadow: -5px 5px 15px rgba(0,0,0,0.4);
+    box-shadow: -6px 6px 25px rgba(0,0,0,0.6);
     position: relative;
     font-family: "Bradley Hand", "Comic Sans MS", cursive;
 }
 
 /* Tape graphics */
 .tape {
-    width: 120px;
+    width: 130px;
     position: absolute;
-    top: -18px;
+    top: -20px;
+    opacity: 0.95;
 }
 
 .tape-left { left: -10px; }
 .tape-right { right: -10px; }
 
 /* Back link */
-.back-link {
-    display: inline-block;
-    margin-top: 25px;
-    font-size: 1.3em;
-    color: #5a0f0f;
+.back {
+    font-size: 1.2em;
     text-decoration: none;
+    color: #4a0c0c;
 }
 
-.back-link:hover {
+.back:hover {
     color: red;
-    text-shadow: 0 0 5px red;
 }
 
-/* ------------------------------
-   MOBILE VIEW FIXES
------------------------------- */
+/* Mobile fixes */
 @media (max-width: 700px) {
-    .journal-container {
+    .journal {
         padding: 20px;
         margin: 15px;
     }
-
-    .entry {
-        font-size: 1.05em;
-    }
-
-    .tape {
-        width: 90px;
-    }
+    .tape { width: 90px; }
 }
