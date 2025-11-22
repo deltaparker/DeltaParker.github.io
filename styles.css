@@ -1,6 +1,6 @@
-/* ============================
-   ROOT TEXTURE OVERLAY (FINAL)
-============================ */
+/* ====================================
+   ROOT TEXTURE — CINEMATIC BLEND FIX
+==================================== */
 
 .root-overlay {
     position: fixed;
@@ -10,18 +10,25 @@
     height: 100%;
     pointer-events: none;
 
-    /* Your uploaded root texture */
+    /* Image */
     background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
 
-    /* Shows the tall image properly */
-    background-size: auto 150%;
-    background-repeat: repeat-y;
-    background-position: center top;
+    /* Much smoother scale */
+    background-size: 45% auto;
+    background-repeat: no-repeat;
+    background-position: right center;
 
-    /* Make it VISIBLE over black */
-    opacity: 0.75;
-    filter: brightness(1.7) contrast(1.3);
+    /* Cinematic blending */
+    opacity: 0.32;
+    filter:
+        brightness(1.15)
+        contrast(1.1)
+        saturate(0.7)
+        blur(1.2px);
 
-    /* TOPMOST LAYER (above smoke, ash, embers) */
-    z-index: 99997;
+    /* Slight dark overlay to blend it */
+    mix-blend-mode: screen;
+
+    /* Keep on top of all FX but behind header */
+    z-index: 9997;
 }
