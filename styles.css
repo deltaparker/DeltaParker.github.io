@@ -10,7 +10,7 @@ body {
     padding-top: 180px;
 }
 
-/* HEADER */
+/* FIXED HEADER */
 header {
     width: 100%;
     background: #111;
@@ -59,6 +59,24 @@ nav a {
 
 
 /* ============================
+   TRANSPARENT ROOT OVERLAY
+============================ */
+.root-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* keeps the website clickable */
+    background-image: url("/mnt/data/smoke_embers_compressed.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.22; /* adjust transparency here */
+    z-index: 5000; /* under header (9999) but above page */
+}
+
+
+/* ============================
    HERO SECTION
 ============================ */
 .hero {
@@ -91,24 +109,4 @@ nav a {
 }
 
 
-/* ============================
-   ASSET CARDS
-============================ */
-.assets-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.asset-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.asset-card {
-    width: 260px;
-    padding: 20px;
-    background: #111;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
-}
+/* ===============*
