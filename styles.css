@@ -1,5 +1,64 @@
 /* ============================
-   HERO + ROOT OVERLAY
+   GLOBAL LAYOUT + FIX HEADER
+============================ */
+
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 180px;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.button-group {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.donate-btn, .cash-btn {
+    padding: 8px 14px;
+    background: #a00;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    margin-left: 6px;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #ff4444;
+    text-shadow: 0 0 12px red;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 18px;
+}
+
+/* ============================
+   HERO SECTION
 ============================ */
 
 .hero {
@@ -10,30 +69,62 @@
 
 .hero-img {
     width: 100%;
-    height: auto;
     display: block;
 }
 
-/* root texture that matches hero size */
+/* ROOT TEXTURE OVERLAY ONLY FOR HERO */
 .hero-root-overlay {
     position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    inset: 0;
     background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
-    background-size: cover;      /* scale to hero image */
-    background-position: center; 
-    background-repeat: no-repeat;
-    opacity: 0.4;                /* transparent overlay */
-    mix-blend-mode: screen;      /* blend into hero art */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.35;
+    mix-blend-mode: screen;
     pointer-events: none;
     z-index: 2;
 }
 
 .hero-text {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
     text-align: center;
+    width: 100%;
     z-index: 3;
+}
+
+/* RED NEON WATERMARK */
+.neon-watermark {
+    font-size: 48px;
+    color: rgba(255, 60, 60, 0.8);
+    letter-spacing: 2px;
+    text-shadow:
+        0 0 6px rgba(255, 0, 0, 1),
+        0 0 12px rgba(255, 0, 0, 0.8),
+        0 0 28px rgba(255, 0, 0, 0.6);
+}
+
+/* ============================
+   ASSET CARDS
+============================ */
+
+.assets-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.asset-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.asset-card {
+    width: 260px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
 }
