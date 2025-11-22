@@ -15,12 +15,13 @@ body {
 header {
     width: 100%;
     background: #111;
-    padding: 20px 0;
+    padding: 25px 0 15px;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
+    border-bottom: 2px solid #000;
 }
 
 .logo {
@@ -28,6 +29,7 @@ header {
     font-weight: bold;
     color: #ff4444;
     text-shadow: 0 0 12px red;
+    margin-bottom: 5px;
 }
 
 nav {
@@ -44,7 +46,7 @@ nav a {
 .button-group {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 15px;
 }
 
 .donate-btn, .cash-btn {
@@ -63,27 +65,27 @@ nav a {
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 160px;   /* pushes image below header */
+    margin-top: 140px; /* EXACT spacing for your header */
 }
 
 .hero-img {
     width: 100%;
-    height: 600px;        /* smaller image like you want */
+    height: 480px;  /* smaller hero image */
     object-fit: cover;
     display: block;
 }
 
-/* ROOT TEXTURE OVER HERO ONLY */
+/* ROOT TEXTURE ONLY OVER HERO */
 .hero-root-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 600px;        /* must match hero-img height */
+    height: 480px;  /* matches new hero height */
     background-image: url("smoke_embers_compressed.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.25;
+    opacity: 0.28;
     pointer-events: none;
     z-index: 2;
 }
@@ -91,16 +93,17 @@ nav a {
 /* HERO TEXT */
 .hero-text {
     position: absolute;
-    top: 40%;             /* moves watermark downward */
+    top: 50%;         /* watermark centered nicely */
     width: 100%;
+    transform: translateY(-50%);
     text-align: center;
     z-index: 3;
 }
 
 .neon-watermark {
-    font-size: 52px;
-    color: rgba(255, 0, 0, 0.3);
-    text-shadow: 0 0 20px rgba(255,0,0,0.5);
+    font-size: 48px;
+    color: rgba(255, 0, 0, 0.25);
+    text-shadow: 0 0 25px rgba(255,0,0,0.55);
     font-weight: bold;
 }
 
