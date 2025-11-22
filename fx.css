@@ -1,15 +1,16 @@
 /* ============================================================
-   CVF 1.0 — CINEMATIC FX (SAFE VERSION)
-   - No smoke overlays
-   - No embers overlays
-   - No hero zoom animation
-   - Includes neon flicker
-   - Includes scanline watermark
-   - Includes falling ash
-   - Compatible with CVS 1.03 + CVI 1.03
+   CVF 1.0 — CLEAN CINEMATIC FX
+   Works with index.html + styles.css exactly as they are.
+   NO smoke, NO root texture, NO embers, NO hero movement.
+   Only safe effects:
+   ✔ neon flicker
+   ✔ falling ash background
+   ✔ scanline under watermark
+   ✔ glowing buttons
+   ✔ glowing asset cards
 ============================================================ */
 
-/* GLOBAL */
+/* GLOBAL CLEAN BACKGROUND */
 body {
     background: #000;
     color: white;
@@ -17,7 +18,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   NEON LOGO FLICKER
+   NEON FLICKER — LOGO
 ------------------------------------------------------------ */
 .logo {
     animation: neonFlicker 2.8s infinite alternate;
@@ -33,7 +34,7 @@ body {
 }
 
 /* ------------------------------------------------------------
-   FALLING ASH — LOCAL FILE
+   FALLING ASH — BACKGROUND EFFECT
 ------------------------------------------------------------ */
 body::before {
     content: "";
@@ -55,7 +56,7 @@ body::before {
 }
 
 /* ------------------------------------------------------------
-   SCANLINE BAR UNDER HERO TEXT
+   SCANLINE — UNDER WATERMARK
 ------------------------------------------------------------ */
 .hero-text {
     position: relative;
