@@ -1,72 +1,78 @@
-/* ============================
-   GLOBAL LAYOUT + BODY FIX
-============================ */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Parker Productions</title>
 
-body {
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 180px;
-}
+    <!-- MAIN LAYOUT -->
+    <link rel="stylesheet" href="styles.css?v=200">
 
-/* ============================
-   HEADER
-============================ */
+    <!-- CINEMATIC FX -->
+    <link rel="stylesheet" href="fx.css?v=2">
+</head>
 
-header {
-    width: 100%;
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    box-shadow: 0 0 12px #000;
-}
+<body>
 
-.button-group {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
+    <!-- SMOKE / ASH / EMBERS -->
+    <div class="fx-smoke"></div>
+    <div class="fx-ash"></div>
+    <div class="fx-embers"></div>
 
-.donate-btn, .cash-btn {
-    padding: 8px 14px;
-    background: #a00;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    margin-left: 6px;
-    font-weight: bold;
-    box-shadow: 0 0 12px red;
-}
+    <!-- HEADER -->
+    <header>
+        <div class="button-group">
+            <a class="donate-btn" href="https://paypal.me/DustanParker177" target="_blank">Donate</a>
+            <a class="cash-btn" href="https://cash.app/$d1parker0" target="_blank">CashApp</a>
+        </div>
 
-.logo {
-    font-size: 34px;
-    font-weight: bold;
-    margin-top: 5px;
-    color: #ff4444;
-    text-shadow: 0 0 12px red;
-}
+        <div class="logo">Delta Parker Productions</div>
 
-nav {
-    margin-top: 10px;
-}
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="devblog.html">Dev Blog</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="store.html">Store</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 18px;
-    transition: 0.2s ease;
-}
+    <!-- HERO SECTION -->
+    <section class="hero">
 
-nav a:hover {
-    color: #ff4444;
-    text-shadow: 0 0 8px red;
-}
+        <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
 
-/* ==========*
+        <div class="hero-text">
+            <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
+            <p>Survive the fall of civilization… or join the horde.</p>
+        </div>
+
+    </section>
+
+    <!-- ASSET SECTION -->
+    <section class="assets-section">
+        <h2 class="section-title">Asset Previews</h2>
+
+        <div class="asset-grid">
+            <div class="asset-card">
+                <h3>Slot #1</h3>
+                <p>New assets coming soon.</p>
+            </div>
+
+            <div class="asset-card">
+                <h3>Slot #2</h3>
+                <p>Check again soon.</p>
+            </div>
+
+            <div class="asset-card">
+                <h3>Slot #3</h3>
+                <p>Models in progress.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
