@@ -1,131 +1,23 @@
 /* ============================
-   GLOBAL PAGE
-============================ */
-body {
-    margin: 0;
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-
-/* ============================
-   HEADER
-============================ */
-header {
-    width: 100%;
-    background: #111;
-    padding: 25px 0 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    border-bottom: 2px solid #000;
-}
-
-.logo {
-    font-size: 34px;
-    font-weight: bold;
-    color: #ff4444;
-    text-shadow: 0 0 12px red;
-    margin-bottom: 5px;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 18px;
-}
-
-.button-group {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-}
-
-.donate-btn, .cash-btn {
-    padding: 8px 14px;
-    background: #a00;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    margin-left: 6px;
-}
-
-
-/* ============================
    HERO SECTION
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 140px; /* EXACT spacing for your header */
+    margin-top: 140px; /* unchanged */
 }
 
+/* FREEZE hero image (no movement anywhere) */
 .hero-img {
     width: 100%;
-    height: 480px;  /* smaller hero image */
+    height: 480px;
     object-fit: cover;
     display: block;
+    transform: none !important;
+    transition: none !important;
 }
 
-/* ROOT TEXTURE ONLY OVER HERO */
-.hero-root-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 480px;  /* matches new hero height */
-    background-image: url("smoke_embers_compressed.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.28;
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* HERO TEXT */
-.hero-text {
-    position: absolute;
-    top: 50%;         /* watermark centered nicely */
-    width: 100%;
-    transform: translateY(-50%);
-    text-align: center;
-    z-index: 3;
-}
-
-.neon-watermark {
-    font-size: 48px;
-    color: rgba(255, 0, 0, 0.25);
-    text-shadow: 0 0 25px rgba(255,0,0,0.55);
-    font-weight: bold;
-}
-
-
-/* ============================
-   ASSET CARDS
-============================ */
-.assets-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.asset-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.asset-card {
-    width: 260px;
-    padding: 20px;
-    background: #111;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
+/* Disable ALL hover animation permanently */
+.hero:hover .hero-img {
+    transform: none !important;
 }
