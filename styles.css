@@ -6,8 +6,41 @@ body {
     background: #000;
     color: white;
     font-family: Arial, sans-serif;
+    position: relative;
+    overflow-x: hidden;
 }
 
+/* VIGNETTE */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle, transparent 55%, rgba(0,0,0,0.85));
+    z-index: 2;
+}
+
+/* FALLING ASH */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    pointer-events: none;
+    background: url("/ash.png") repeat;
+    opacity: 0.4;
+    animation: ashFall 15s linear infinite;
+    z-index: 1;
+}
+@keyframes ashFall {
+    from { background-position: 0 -200px; }
+    to   { background-position: 0 600px; }
+}
 
 /* ============================
    HEADER
@@ -15,13 +48,12 @@ body {
 header {
     width: 100%;
     background: #111;
-    padding: 25px 0 15px;
+    padding: 20px 0;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    border-bottom: 2px solid #000;
 }
 
 .logo {
@@ -29,7 +61,16 @@ header {
     font-weight: bold;
     color: #ff4444;
     text-shadow: 0 0 12px red;
-    margin-bottom: 5px;
+    animation: neonFlicker 2.8s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%   { opacity: 0.75; text-shadow: 0 0 3px #ff0000; }
+    5%   { opacity: 1; text-shadow: 0 0 12px #ff0000, 0 0 25px #cc0000; }
+    20%  { opacity: 0.6; }
+    35%  { opacity: 1; text-shadow: 0 0 25px #ff2222; }
+    60%  { opacity: 0.9; text-shadow: 0 0 40px #aa0000; }
+    100% { opacity: 0.82; text-shadow: 0 0 18px #ff1111; }
 }
 
 nav {
@@ -46,66 +87,120 @@ nav a {
 .button-group {
     position: absolute;
     right: 20px;
-    top: 15px;
+    top: 20px;
 }
 
-.donate-btn, .cash-btn {
+.button-group a {
     padding: 8px 14px;
     background: #a00;
     border-radius: 6px;
     text-decoration: none;
     color: white;
     margin-left: 6px;
+    animation: pulseGlow 2.4s infinite alternate;
 }
+
+@keyframes pulseGlow {
+    0%   { box-shadow: 0 0 12px red; }
+    100% { box-shadow: 0 0 28px #ff3333; }
+}
+
 /* ============================
    HERO SECTION
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 260px;   /* moves hero image further down */
+    margin-top: 260px;  /* <<< MOVE HERO IMAGE DOWN HERE */
 }
 
+/* Remove pulse animation from desktop */
+@media (min-width: 900px) {
+    .hero:hover .hero-img {
+        transform: none !important;
+    }
 }
 
-/* ROOT TEXTURE ONLY OVER HERO */
+.hero-img {
+    width: 100%;
+    height: 680px;
+    object-fit: cover;
+    display: block;
+}
+
+/* LOCAL ROOT TEXTURE */
 .hero-root-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 480px;  /* matches new hero height */
+    height: 680px;
     background-image: url("smoke_embers_compressed.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.28;
+    opacity: 0.25;
     pointer-events: none;
     z-index: 2;
 }
 
-/* HERO TEXT */
-.hero-text {
+/* EMBERS OVERLAY */
+.hero::after {
+    content: "";
     position: absolute;
-    top: 50%;         /* watermark centered nicely */
-    width: 100%;
-    transform: translateY(-50%);
-    text-align: center;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    pointer-events: none;
+    background: url("/embers.png") repeat;
+    opacity: 0.25;
+    animation: embersFloat 25s linear infinite;
     z-index: 3;
 }
 
+@keyframes embersFloat {
+    from { background-position: 0 0; }
+    to   { background-position: 800px -1200px; }
+}
+
+/* HERO TEXT + SCANLINE */
+.hero-text {
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    text-align: center;
+    z-index: 4;
+}
+
 .neon-watermark {
-    font-size: 48px;
-    color: rgba(255, 0, 0, 0.25);
-    text-shadow: 0 0 25px rgba(255,0,0,0.55);
+    font-size: 58px;
+    color: rgba(255, 0, 0, 0.35);
+    text-shadow: 0 0 20px rgba(255,0,0,0.6);
     font-weight: bold;
 }
 
+.hero-text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, rgba(255,0,0,0.7), transparent);
+    animation: scanline 4.5s infinite;
+}
+
+@keyframes scanline {
+    0%   { top: 0%; opacity: 0; }
+    20%  { opacity: 1; }
+    50%  { top: 80%; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
 
 /* ============================
    ASSET CARDS
 ============================ */
 .assets-section {
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
 }
 
@@ -120,15 +215,12 @@ nav a {
     padding: 20px;
     background: #111;
     border-radius: 10px;
-    box-shadow: 0 0 10px #000;
+    border: 2px solid rgba(255,0,0,0.35);
+    box-shadow: 0 0 15px rgba(255,0,0,0.25);
+    transition: 0.25s;
 }
-/* ============================================================
-   STOP HERO PULSE ON DESKTOP — KEEP ON MOBILE
-============================================================ */
 
-/* Remove hover scaling on devices with a mouse */
-@media (hover: hover) and (pointer: fine) {
-    .hero:hover .hero-img {
-        transform: none !important;
-    }
+.asset-card:hover {
+    border-color: #ff4444;
+    box-shadow: 0 0 25px rgba(255,0,0,0.55);
 }
