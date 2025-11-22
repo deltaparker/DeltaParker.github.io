@@ -1,55 +1,182 @@
+/* =====================================================
+      CVS 1.03-rev2 — MOBILE HEADER FIX (Option A)
+      Desktop remains exactly 1.02 layout
+===================================================== */
+
+/* GLOBAL */
+body {
+    margin: 0;
+    background: #000;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
 /* ============================
-   1.03 — MOBILE HEADER FIX
-   Move logo left, keep nav center, buttons right
+   HEADER — DESKTOP DEFAULT
 ============================ */
-.header-inner {
-    display: flex;
+header {
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
+    background: #111;
+    padding: 25px 0 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    border-bottom: 2px solid #000;
 }
 
-/* Left side logo */
-.logo-area {
-    flex: 1;
-    text-align: left;
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    color: #ff4444;
+    text-shadow: 0 0 12px red;
+    margin-bottom: 5px;
 }
 
-/* Center nav */
-.nav-area {
-    flex: 1;
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 18px;
+}
+
+.button-group {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.donate-btn,
+.cash-btn {
+    padding: 8px 14px;
+    background: #a00;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    margin-left: 6px;
+}
+
+/* ============================
+   HERO — unchanged from 1.02
+============================ */
+.hero {
+    position: relative;
+    width: 100%;
+    margin-top: 140px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-root-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 480px;
+    background-image: url("smoke_embers_compressed.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.28;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    z-index: 3;
+}
+
+.neon-watermark {
+    font-size: 48px;
+    color: rgba(255, 0, 0, 0.25);
+    text-shadow: 0 0 25px rgba(255,0,0,0.55);
+    font-weight: bold;
+}
+
+/* ============================
+   ASSETS — unchanged
+============================ */
+.assets-section {
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* Right side buttons */
-.button-group {
-    flex: 1;
-    text-align: right;
+.asset-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-/* MOBILE STACK FIX */
+.asset-card {
+    width: 260px;
+    padding: 20px;
+    background: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+}
+
+/* ===========================================
+   MOBILE FIX — OPTION A (3-row layout)
+   ONLY activates under 768px
+=========================================== */
 @media (max-width: 768px) {
 
-    .header-inner {
-        flex-wrap: wrap;
-        padding-bottom: 10px;
-    }
-
-    .logo-area {
-        width: 100%;
+    header {
+        padding: 15px 10px;
+        height: auto;
         text-align: left;
-        margin-bottom: 5px;
     }
 
-    .nav-area {
-        width: 100%;
+    /* Row 1: Logo left */
+    .logo {
+        font-size: 26px;
+        margin: 0;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    /* Row 2: Navigation centered */
+    nav {
         text-align: center;
-        margin-bottom: 8px;
+        margin: 8px 0;
+        width: 100%;
     }
 
+    nav a {
+        display: inline-block;
+        margin: 5px 8px;
+        font-size: 16px;
+    }
+
+    /* Row 3: Donate + CashApp centered below nav */
     .button-group {
-        width: 100%;
-        text-align: right;
+        position: static;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .button-group a {
+        font-size: 14px;
+        padding: 7px 12px;
+        margin: 0 6px;
+    }
+
+    /* Push hero down further so header does not overlap */
+    .hero {
+        margin-top: 220px;
     }
 }
