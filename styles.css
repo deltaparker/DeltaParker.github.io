@@ -1,169 +1,87 @@
-/* ============================
-   GLOBAL PAGE
-============================ */
-body {
-    margin: 0;
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta Parker Productions</title>
+
+    <link rel="stylesheet" href="styles.css?v=103">
+    <link rel="stylesheet" href="fx.css?v=2">
+</head>
+
+<body>
+
+<header>
+
+    <!-- MOBILE HAMBURGER -->
+    <div class="mobile-menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <!-- LOGO (centered on mobile) -->
+    <div class="logo">Delta Parker Productions</div>
+
+    <!-- RIGHT SIDE BUTTONS -->
+    <div class="button-group">
+        <a class="donate-btn" href="https://paypal.me/DustanParker177" target="_blank">Donate</a>
+        <a class="cash-btn" href="https://cash.app/$d1parker0" target="_blank">CashApp</a>
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="games.html">Games</a>
+        <a href="devblog.html">Dev Blog</a>
+        <a href="downloads.html">Downloads</a>
+        <a href="store.html">Store</a>
+        <a href="team.html">Team</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-root-overlay"></div>
+
+    <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
+
+    <div class="hero-text">
+        <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
+        <p>Survive the fall of civilization… or join the horde.</p>
+    </div>
+</section>
+
+
+<section class="assets-section">
+    <h2 class="section-title">Asset Previews</h2>
+
+    <div class="asset-grid">
+        <div class="asset-card">
+            <h3>Slot #1</h3>
+            <p>New assets coming soon.</p>
+        </div>
+
+        <div class="asset-card">
+            <h3>Slot #2</h3>
+            <p>Check again soon.</p>
+        </div>
+
+        <div class="asset-card">
+            <h3>Slot #3</h3>
+            <p>Models in progress.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    nav.classList.toggle("open");
 }
+</script>
 
-
-/* ============================
-   HEADER
-============================ */
-header {
-    width: 100%;
-    background: #111;
-    padding: 25px 0 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    border-bottom: 2px solid #000;
-}
-
-.logo {
-    font-size: 34px;
-    font-weight: bold;
-    color: #ff4444;
-    text-shadow: 0 0 12px red;
-    margin-bottom: 5px;
-}
-
-/* DESKTOP NAV */
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 18px;
-}
-
-.button-group {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-}
-
-.donate-btn, .cash-btn {
-    padding: 8px 14px;
-    background: #a00;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    margin-left: 6px;
-}
-
-
-/* ============================
-   MOBILE HEADER FIX (ONLY CHANGE)
-============================ */
-@media (max-width: 768px) {
-
-    header {
-        padding: 15px 0 10px;
-    }
-
-    .logo {
-        text-align: left;
-        margin-left: 20px;
-        font-size: 26px;
-        display: block;
-    }
-
-    nav {
-        margin-top: 8px;
-    }
-
-    nav a {
-        margin: 0 6px;
-        font-size: 15px;
-    }
-
-    .button-group {
-        top: 10px;
-        right: 10px;
-    }
-
-    .donate-btn, .cash-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-}
-
-
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-    position: relative;
-    width: 100%;
-    margin-top: 140px; /* PERFECT SPACING */
-}
-
-.hero-img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    display: block;
-}
-
-/* ROOT TEXTURE */
-.hero-root-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 480px;
-    background-image: url("smoke_embers_compressed.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.28;
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* HERO TEXT */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    transform: translateY(-50%);
-    text-align: center;
-    z-index: 3;
-}
-
-.neon-watermark {
-    font-size: 48px;
-    color: rgba(255, 0, 0, 0.25);
-    text-shadow: 0 0 25px rgba(255,0,0,0.55);
-    font-weight: bold;
-}
-
-
-/* ============================
-   ASSET CARDS
-============================ */
-.assets-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.asset-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.asset-card {
-    width: 260px;
-    padding: 20px;
-    background: #111;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
-}
+</body>
+</html>
