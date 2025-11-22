@@ -129,3 +129,13 @@ nav a {
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
 }
+/* ============================================================
+   STOP HERO PULSE ON DESKTOP — KEEP ON MOBILE
+============================================================ */
+
+/* Remove hover scaling on devices with a mouse */
+@media (hover: hover) and (pointer: fine) {
+    .hero:hover .hero-img {
+        transform: none !important;
+    }
+}
