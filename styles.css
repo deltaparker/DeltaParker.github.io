@@ -32,3 +32,16 @@
     /* Keep on top of all FX but behind header */
     z-index: 9997;
 }
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <!-- ROOT TEXTURE ONLY OVER HERO -->
+    <div class="hero-root-overlay"></div>
+
+    <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
+
+    <div class="hero-text">
+        <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
+        <p>Survive the fall of civilization… or join the horde.</p>
+    </div>
+</section>
