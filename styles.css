@@ -57,22 +57,15 @@ nav a {
     color: white;
     margin-left: 6px;
 }
-
-
 /* ============================
    HERO SECTION
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 140px; /* EXACT spacing for your header */
+    margin-top: 260px;   /* moves hero image further down */
 }
 
-.hero-img {
-    width: 100%;
-    height: 480px;  /* smaller hero image */
-    object-fit: cover;
-    display: block;
 }
 
 /* ROOT TEXTURE ONLY OVER HERO */
