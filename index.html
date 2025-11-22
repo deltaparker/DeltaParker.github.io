@@ -5,81 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delta Parker Productions</title>
 
+    <!-- MAIN LAYOUT -->
     <link rel="stylesheet" href="styles.css?v=103">
-    <link rel="stylesheet" href="fx.css?v=2">
 </head>
 
 <body>
 
-<header>
+    <!-- HEADER -->
+    <header>
 
-    <!-- MOBILE HAMBURGER -->
-    <div class="mobile-menu-btn" onclick="toggleMenu()">
-        ☰
-    </div>
+        <!-- MOBILE HAMBURGER (LEFT) -->
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
 
-    <!-- LOGO (centered on mobile) -->
-    <div class="logo">Delta Parker Productions</div>
+        <!-- LOGO -->
+        <div class="logo">Delta Parker Productions</div>
 
-    <!-- RIGHT SIDE BUTTONS -->
-    <div class="button-group">
-        <a class="donate-btn" href="https://paypal.me/DustanParker177" target="_blank">Donate</a>
-        <a class="cash-btn" href="https://cash.app/$d1parker0" target="_blank">CashApp</a>
-    </div>
+        <!-- NAVIGATION -->
+        <nav id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="devblog.html">Dev Blog</a>
+            <a href="downloads.html">Downloads</a>
+            <a href="store.html">Store</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
 
-    <!-- NAVIGATION -->
-    <nav id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="devblog.html">Dev Blog</a>
-        <a href="downloads.html">Downloads</a>
-        <a href="store.html">Store</a>
-        <a href="team.html">Team</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-</header>
+            <div class="button-group">
+                <a class="donate-btn" href="https://paypal.me/DustanParker177" target="_blank">Donate</a>
+                <a class="cash-btn" href="https://cash.app/$d1parker0" target="_blank">CashApp</a>
+            </div>
+        </nav>
+    </header>
 
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-root-overlay"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-root-overlay"></div>
 
-    <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
+        <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
 
-    <div class="hero-text">
-        <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
-        <p>Survive the fall of civilization… or join the horde.</p>
-    </div>
-</section>
-
-
-<section class="assets-section">
-    <h2 class="section-title">Asset Previews</h2>
-
-    <div class="asset-grid">
-        <div class="asset-card">
-            <h3>Slot #1</h3>
-            <p>New assets coming soon.</p>
+        <div class="hero-text">
+            <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
+            <p>Survive the fall of civilization… or join the horde.</p>
         </div>
+    </section>
 
-        <div class="asset-card">
-            <h3>Slot #2</h3>
-            <p>Check again soon.</p>
-        </div>
 
-        <div class="asset-card">
-            <h3>Slot #3</h3>
-            <p>Models in progress.</p>
+    <!-- ASSET SECTION -->
+    <section class="assets-section">
+        <h2 class="section-title">Asset Previews</h2>
+
+        <div class="asset-grid">
+            <div class="asset-card">
+                <h3>Slot #1</h3>
+                <p>New assets coming soon.</p>
+            </div>
+
+            <div class="asset-card">
+                <h3>Slot #2</h3>
+                <p>Check again soon.</p>
+            </div>
+
+            <div class="asset-card">
+                <h3>Slot #3</h3>
+                <p>Models in progress.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <script>
 function toggleMenu() {
-    const nav = document.getElementById("mainNav");
-    nav.classList.toggle("open");
+    document.getElementById("nav-menu").classList.toggle("open");
 }
 </script>
 
