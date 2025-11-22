@@ -60,26 +60,26 @@ nav a {
 
 
 /* ============================
-   HERO SECTION — FIXED NO SCROLL
+   HERO SECTION (FIXED VERSION)
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    height: 480px;        /* <<< LOCKED HERO HEIGHT */
-    margin-top: 140px;    /* same as before */
-    overflow: hidden;     /* <<< FIXES SCROLL PULLING IMAGE */
+    height: 480px;            /* ← FIXED HEIGHT */
+    margin-top: 140px;        /* same as before */
+    overflow: hidden;         /* ← FIXES SCROLLING PROBLEM */
 }
 
-/* image locked + centered */
+/* HERO IMAGE NO-SCROLL FIX */
 .hero-img {
     position: absolute;
     top: 0;
     left: 50%;
-    height: 100%;
+    height: 100%;             /* fills hero height */
     width: auto;
     transform: translateX(-50%);
     object-fit: cover;
-    pointer-events: none;
+    pointer-events: none;     /* prevents weird interactions */
 }
 
 /* ROOT TEXTURE ONLY OVER HERO */
@@ -88,7 +88,7 @@ nav a {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;        /* now matches hero automatically */
+    height: 100%;             /* matched hero */
     background-image: url("smoke_embers_compressed.jpg");
     background-size: cover;
     background-position: center;
