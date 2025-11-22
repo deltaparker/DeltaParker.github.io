@@ -1,5 +1,5 @@
 /* ============================
-   GLOBAL LAYOUT + FIX HEADER
+   GLOBAL LAYOUT + BODY FIX
 ============================ */
 
 body {
@@ -7,10 +7,13 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 180px;
+    padding-top: 180px; /* space under fixed header */
 }
 
-/* HEADER */
+/* ============================
+   HEADER (FULLY RESTORED)
+============================ */
+
 header {
     width: 100%;
     background: #111;
@@ -21,6 +24,7 @@ header {
     top: 0;
     left: 0;
     z-index: 9999;
+    box-shadow: 0 0 12px #000;
 }
 
 .button-group {
@@ -36,6 +40,8 @@ header {
     text-decoration: none;
     color: white;
     margin-left: 6px;
+    font-weight: bold;
+    box-shadow: 0 0 12px red;
 }
 
 .logo {
@@ -55,6 +61,12 @@ nav a {
     text-decoration: none;
     margin: 0 12px;
     font-size: 18px;
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    color: #ff4444;
+    text-shadow: 0 0 8px red;
 }
 
 /* ============================
@@ -72,59 +84,8 @@ nav a {
     display: block;
 }
 
-/* ROOT TEXTURE OVERLAY ONLY FOR HERO */
+/* ROOT TEXTURE ONLY FOR HERO */
 .hero-root-overlay {
     position: absolute;
     inset: 0;
-    background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.35;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.hero-text {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 100%;
-    z-index: 3;
-}
-
-/* RED NEON WATERMARK */
-.neon-watermark {
-    font-size: 48px;
-    color: rgba(255, 60, 60, 0.8);
-    letter-spacing: 2px;
-    text-shadow:
-        0 0 6px rgba(255, 0, 0, 1),
-        0 0 12px rgba(255, 0, 0, 0.8),
-        0 0 28px rgba(255, 0, 0, 0.6);
-}
-
-/* ============================
-   ASSET CARDS
-============================ */
-
-.assets-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.asset-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.asset-card {
-    width: 260px;
-    padding: 20px;
-    background: #111;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #000;
-}
+    background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_ember_
