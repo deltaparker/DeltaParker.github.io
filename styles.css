@@ -1,117 +1,5 @@
 /* ============================
-   GLOBAL LAYOUT + FIX HEADER
-============================ */
-
-body {
-    background: #000;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 180px;
-}
-
-/* FIXED HEADER */
-header {
-    width: 100%;
-    background: #111;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-}
-
-.button-group {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-}
-
-.donate-btn, .cash-btn {
-    padding: 8px 14px;
-    background: #a00;
-    border-radius: 6px;
-    text-decoration: none;
-    color: white;
-    margin-left: 6px;
-}
-
-.logo {
-    font-size: 34px;
-    font-weight: bold;
-    margin-top: 5px;
-    color: #ff4444;
-    text-shadow: 0 0 12px red;
-}
-
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 18px;
-}
-
-
-/* ============================
-   TRANSPARENT ROOT OVERLAY
-============================ */
-.root-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* keeps the website clickable */
-    background-image: url("/mnt/data/smoke_embers_compressed.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.22; /* adjust transparency here */
-    z-index: 5000; /* under header (9999) but above page */
-}
-
-
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-    position: relative;
-    width: 100%;
-}
-
-.hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.hero-text {
-    position: absolute;
-    top: 35%;
-    width: 100%;
-    text-align: center;
-    color: white;
-    text-shadow: 0 0 12px black;
-}
-
-.hero-text h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    font-size: 22px;
-}
-
-
-/* ===============*
-/* ============================
-   ROOT TEXTURE OVERLAY (FIXED)
+   ROOT TEXTURE OVERLAY (FINAL)
 ============================ */
 
 .root-overlay {
@@ -122,18 +10,18 @@ nav a {
     height: 100%;
     pointer-events: none;
 
-    /* Texture URL (ROOTS) */
+    /* Your uploaded root texture */
     background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
 
-    /* Show full vertical root texture */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    /* Shows the tall image properly */
+    background-size: auto 150%;
+    background-repeat: repeat-y;
+    background-position: center top;
 
-    /* Make the roots visible on black */
-    opacity: 0.55;
-    filter: brightness(1.45) contrast(1.2);
+    /* Make it VISIBLE over black */
+    opacity: 0.75;
+    filter: brightness(1.7) contrast(1.3);
 
-    /* Appear above everything except header */
-    z-index: 5000;
+    /* TOPMOST LAYER (above smoke, ash, embers) */
+    z-index: 99997;
 }
