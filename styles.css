@@ -1,9 +1,6 @@
-/* =====================================================
-      CVS 1.03-rev2 — MOBILE HEADER FIX (Option A)
-      Desktop remains exactly 1.02 layout
-===================================================== */
-
-/* GLOBAL */
+/* ============================
+   GLOBAL PAGE
+============================ */
 body {
     margin: 0;
     background: #000;
@@ -11,8 +8,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
+
 /* ============================
-   HEADER — DESKTOP DEFAULT
+   HEADER
 ============================ */
 header {
     width: 100%;
@@ -34,6 +32,7 @@ header {
     margin-bottom: 5px;
 }
 
+/* DESKTOP NAV */
 nav {
     margin-top: 10px;
 }
@@ -51,8 +50,7 @@ nav a {
     top: 15px;
 }
 
-.donate-btn,
-.cash-btn {
+.donate-btn, .cash-btn {
     padding: 8px 14px;
     background: #a00;
     border-radius: 6px;
@@ -61,13 +59,51 @@ nav a {
     margin-left: 6px;
 }
 
+
 /* ============================
-   HERO — unchanged from 1.02
+   MOBILE HEADER FIX (ONLY CHANGE)
+============================ */
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 0 10px;
+    }
+
+    .logo {
+        text-align: left;
+        margin-left: 20px;
+        font-size: 26px;
+        display: block;
+    }
+
+    nav {
+        margin-top: 8px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 15px;
+    }
+
+    .button-group {
+        top: 10px;
+        right: 10px;
+    }
+
+    .donate-btn, .cash-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+
+/* ============================
+   HERO SECTION
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 140px;
+    margin-top: 140px; /* PERFECT SPACING */
 }
 
 .hero-img {
@@ -77,6 +113,7 @@ nav a {
     display: block;
 }
 
+/* ROOT TEXTURE */
 .hero-root-overlay {
     position: absolute;
     top: 0;
@@ -91,6 +128,7 @@ nav a {
     z-index: 2;
 }
 
+/* HERO TEXT */
 .hero-text {
     position: absolute;
     top: 50%;
@@ -107,8 +145,9 @@ nav a {
     font-weight: bold;
 }
 
+
 /* ============================
-   ASSETS — unchanged
+   ASSET CARDS
 ============================ */
 .assets-section {
     padding: 40px 20px;
@@ -127,56 +166,4 @@ nav a {
     background: #111;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
-}
-
-/* ===========================================
-   MOBILE FIX — OPTION A (3-row layout)
-   ONLY activates under 768px
-=========================================== */
-@media (max-width: 768px) {
-
-    header {
-        padding: 15px 10px;
-        height: auto;
-        text-align: left;
-    }
-
-    /* Row 1: Logo left */
-    .logo {
-        font-size: 26px;
-        margin: 0;
-        padding-left: 10px;
-        text-align: left;
-    }
-
-    /* Row 2: Navigation centered */
-    nav {
-        text-align: center;
-        margin: 8px 0;
-        width: 100%;
-    }
-
-    nav a {
-        display: inline-block;
-        margin: 5px 8px;
-        font-size: 16px;
-    }
-
-    /* Row 3: Donate + CashApp centered below nav */
-    .button-group {
-        position: static;
-        text-align: center;
-        margin-top: 8px;
-    }
-
-    .button-group a {
-        font-size: 14px;
-        padding: 7px 12px;
-        margin: 0 6px;
-    }
-
-    /* Push hero down further so header does not overlap */
-    .hero {
-        margin-top: 220px;
-    }
 }
