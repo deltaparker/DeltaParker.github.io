@@ -209,3 +209,58 @@ nav {
         z-index: 9999;
     }
 }
+/* ============================
+   MOBILE HEADER FIX (1.03)
+============================ */
+@media (max-width: 768px) {
+
+    /* Make header layout a clean row */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 10px;
+    }
+
+    /* Hamburger on left */
+    .mobile-menu-icon {
+        font-size: 28px;
+        cursor: pointer;
+        color: white;
+        margin-right: 10px;
+    }
+
+    /* Logo next to hamburger */
+    .logo {
+        font-size: 22px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Inline row: [☰] [Delta Parker Productions] */
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* Buttons visible on mobile again */
+    .button-group {
+        position: static;
+        display: flex;
+        gap: 8px;
+    }
+
+    .donate-btn, .cash-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    /* Hide desktop nav on phone (optional) */
+    nav {
+        display: none;
+    }
+}
