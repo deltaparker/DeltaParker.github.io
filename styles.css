@@ -179,3 +179,33 @@ nav {
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
 }
+/* ============================
+   MOBILE LOGO POSITION FIX
+   ============================ */
+@media (max-width: 850px) {
+
+    /* Move logo right beside hamburger */
+    .logo {
+        position: absolute;
+        left: 45px;     /* sits directly next to hamburger */
+        top: 14px;      /* aligns vertically */
+        font-size: 22px; /* optional: cleaner for mobile */
+        transform: none;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+    }
+
+    /* Prevent header flex centering from fighting our position */
+    header {
+        justify-content: flex-start;
+    }
+
+    /* Make hamburger stay in its spot */
+    .hamburger {
+        position: absolute;
+        left: 10px;
+        top: 14px;
+        z-index: 9999;
+    }
+}
