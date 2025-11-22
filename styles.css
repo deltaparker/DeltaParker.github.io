@@ -6,8 +6,8 @@ body {
     background: #000;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
-
 
 /* ============================
    HEADER
@@ -15,38 +15,23 @@ body {
 header {
     width: 100%;
     background: #111;
-    padding: 15px 0 10px;
+    padding: 25px 0 15px;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
     border-bottom: 2px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* LOGO CENTERED */
 .logo {
-    font-size: 24px;
+    font-size: 34px;
     font-weight: bold;
     color: #ff4444;
     text-shadow: 0 0 12px red;
+    margin-bottom: 5px;
 }
 
-/* HAMBURGER LEFT */
-.hamburger {
-    position: absolute;
-    left: 20px;
-    top: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    display: none;
-}
-
-/* NAVIGATION */
 nav {
     margin-top: 10px;
 }
@@ -58,7 +43,13 @@ nav a {
     font-size: 18px;
 }
 
-.button-group a {
+.button-group {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.donate-btn, .cash-btn {
     padding: 8px 14px;
     background: #a00;
     border-radius: 6px;
@@ -67,54 +58,13 @@ nav a {
     margin-left: 6px;
 }
 
-/* MOBILE MENU HIDDEN */
-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-/* MOBILE MODE */
-@media (max-width: 850px) {
-
-    .hamburger {
-        display: block;
-    }
-
-    nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #111;
-        flex-direction: column;
-        display: none;
-        padding-bottom: 20px;
-    }
-
-    nav.open {
-        display: flex;
-    }
-
-    nav a {
-        margin: 10px 0;
-        font-size: 20px;
-    }
-
-    .button-group {
-        margin-top: 10px;
-    }
-}
-
-
-
 /* ============================
    HERO SECTION
 ============================ */
 .hero {
     position: relative;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 140px; /* Perfect alignment under header */
 }
 
 .hero-img {
@@ -124,7 +74,7 @@ nav {
     display: block;
 }
 
-/* ROOT TEXTURE */
+/* Texture layer */
 .hero-root-overlay {
     position: absolute;
     top: 0;
@@ -156,8 +106,6 @@ nav {
     font-weight: bold;
 }
 
-
-
 /* ============================
    ASSET CARDS
 ============================ */
@@ -178,89 +126,11 @@ nav {
     background: #111;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
+    border: 2px solid rgba(255,0,0,0.35);
+    transition: 0.25s;
 }
-/* ============================
-   MOBILE LOGO POSITION FIX
-   ============================ */
-@media (max-width: 850px) {
 
-    /* Move logo right beside hamburger */
-    .logo {
-        position: absolute;
-        left: 45px;     /* sits directly next to hamburger */
-        top: 14px;      /* aligns vertically */
-        font-size: 22px; /* optional: cleaner for mobile */
-        transform: none;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-    }
-
-    /* Prevent header flex centering from fighting our position */
-    header {
-        justify-content: flex-start;
-    }
-
-    /* Make hamburger stay in its spot */
-    .hamburger {
-        position: absolute;
-        left: 10px;
-        top: 14px;
-        z-index: 9999;
-    }
-}
-/* ============================
-   MOBILE HEADER FIX (1.03)
-============================ */
-@media (max-width: 768px) {
-
-    /* Make header layout a clean row */
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 14px 10px;
-    }
-
-    /* Hamburger on left */
-    .mobile-menu-icon {
-        font-size: 28px;
-        cursor: pointer;
-        color: white;
-        margin-right: 10px;
-    }
-
-    /* Logo next to hamburger */
-    .logo {
-        font-size: 22px;
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        display: flex;
-        align-items: center;
-    }
-
-    /* Inline row: [☰] [Delta Parker Productions] */
-    .header-left {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    /* Buttons visible on mobile again */
-    .button-group {
-        position: static;
-        display: flex;
-        gap: 8px;
-    }
-
-    .donate-btn, .cash-btn {
-        padding: 6px 10px;
-        font-size: 14px;
-    }
-
-    /* Hide desktop nav on phone (optional) */
-    nav {
-        display: none;
-    }
+.asset-card:hover {
+    border-color: #ff4444;
+    box-shadow: 0 0 25px rgba(255,0,0,0.55);
 }
