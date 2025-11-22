@@ -1,47 +1,39 @@
-/* ====================================
-   ROOT TEXTURE — CINEMATIC BLEND FIX
-==================================== */
+/* ============================
+   HERO + ROOT OVERLAY
+============================ */
 
-.root-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
+.hero {
+    position: relative;
     width: 100%;
-    height: 100%;
-    pointer-events: none;
-
-    /* Image */
-    background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
-
-    /* Much smoother scale */
-    background-size: 45% auto;
-    background-repeat: no-repeat;
-    background-position: right center;
-
-    /* Cinematic blending */
-    opacity: 0.32;
-    filter:
-        brightness(1.15)
-        contrast(1.1)
-        saturate(0.7)
-        blur(1.2px);
-
-    /* Slight dark overlay to blend it */
-    mix-blend-mode: screen;
-
-    /* Keep on top of all FX but behind header */
-    z-index: 9997;
+    overflow: hidden;
 }
-<!-- HERO SECTION -->
-<section class="hero">
 
-    <!-- ROOT TEXTURE ONLY OVER HERO -->
-    <div class="hero-root-overlay"></div>
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-    <img src="knight_survivor.jpg" class="hero-img" alt="Hero">
+/* root texture that matches hero size */
+.hero-root-overlay {
+    position: absolute;
+    inset: 0; /* top:0; right:0; bottom:0; left:0 */
+    background-image: url("https://raw.githubusercontent.com/deltaparker/DeltaParker.github.io/main/smoke_embers_compressed.jpg");
+    background-size: cover;      /* scale to hero image */
+    background-position: center; 
+    background-repeat: no-repeat;
+    opacity: 0.4;                /* transparent overlay */
+    mix-blend-mode: screen;      /* blend into hero art */
+    pointer-events: none;
+    z-index: 2;
+}
 
-    <div class="hero-text">
-        <h1 class="neon-watermark">THE OUTBREAK HAS BEGUN</h1>
-        <p>Survive the fall of civilization… or join the horde.</p>
-    </div>
-</section>
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
