@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A free, practical guide to recording mod compatibility tests and keeping release claims tied to evidence.">
+  <meta property="og:title" content="A Practical Guide to Mod Release Evidence">
+  <meta property="og:description" content="Record the exact build, checks, runtime tests, and limits behind a mod compatibility claim.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://deltaparker.github.io/mod-release-evidence-guide.html">
+  <title>A Practical Guide to Mod Release Evidence — Delta Parker</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { min-height: 100vh; }
+    .guide-shell { box-sizing: border-box; width: min(850px, 100%); margin: 0 auto; padding: 42px 22px 64px; }
+    .guide-nav { margin-bottom: 30px; }
+    .guide-nav a, .guide-article a { color: #ffc1c1; text-underline-offset: 4px; }
+    .guide-title { margin: 0 0 12px; color: #ff6666; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.12; }
+    .guide-intro, .guide-article p, .guide-article li { color: #e8e0e0; font-size: 1.04rem; line-height: 1.7; }
+    .guide-article { padding: clamp(22px, 5vw, 40px); border: 1px solid #744; border-radius: 16px; background: linear-gradient(145deg, #171313, #090909 70%); box-shadow: 0 16px 44px #0009; }
+    .guide-article h2 { margin: 30px 0 8px; color: #ff8d8d; font-size: 1.35rem; }
+    .guide-article h2:first-child { margin-top: 0; }
+    .guide-article li { margin: 7px 0; }
+    .example { margin: 18px 0; padding: 16px 18px; border-left: 3px solid #ff7777; background: #211919; color: #fff; line-height: 1.65; }
+    .guide-cta { margin-top: 32px; padding-top: 24px; border-top: 1px solid #463838; }
+    .guide-cta strong { color: #fff; }
+    @media (max-width: 520px) { .guide-shell { padding: 28px 16px 46px; } }
+  </style>
+</head>
+<body>
+  <main class="guide-shell">
+    <nav class="guide-nav" aria-label="Page navigation">
+      <a href="index.html">← Delta Parker Productions</a> · <a href="store.html">Store</a>
+    </nav>
+    <article class="guide-article">
+      <p class="product-kicker">Free guide for independent mod authors</p>
+      <h1 class="guide-title">Make compatibility claims you can show your work for</h1>
+      <p class="guide-intro">A useful release record answers three questions: exactly what did you test, what happened, and what remains unknown? Keeping those answers together helps you write clearer release notes and makes it easier to repeat a test after a game update.</p>
+
+      <h2>1. Identify the exact setup</h2>
+      <p>Write down the game build or branch, platform, mod version, required dependencies, relevant load order, and test date. If a setting or save affects the result, note that too. “Tested on the latest version” gets stale quickly; an exact build number gives another person a concrete starting point.</p>
+
+      <h2>2. Separate package checks from runtime tests</h2>
+      <p>Opening the archive, checking file paths, and confirming expected metadata are package checks. Loading the game and exercising the mod are runtime tests. Record them separately so a clean package review does not get mistaken for proof that the mod works in play.</p>
+
+      <h2>3. Make each test repeatable</h2>
+      <p>For every test, state the starting conditions, the action you took, what you expected, and what you observed. Include the result even when it fails. A short reproducible issue report is more useful than “seems broken” because it gives you or another author a way to try the same steps.</p>
+      <div class="example"><strong>Example:</strong> With build [number] and mod version [number], start a new test save, enable [feature], then perform [action]. Expected: [result]. Observed: [result]. Result: [pass/fail/not run].</div>
+
+      <h2>4. Keep evidence connected to the test</h2>
+      <p>Give screenshots, logs, or recordings a filename that points back to the test session. Note what each item demonstrates and what it cannot demonstrate. Before sharing, remove private paths, account names, or other personal details that are not needed to understand the result.</p>
+
+      <h2>5. Say what you did not test</h2>
+      <p>State known limits plainly: other game branches, multiplayer, unusual load orders, or long sessions may not have been covered. A narrow claim backed by clear evidence is more useful than a broad promise that the test did not establish.</p>
+      <div class="example">“Tested on build [number] in [environment] on [date]: [specific actions] passed. Multiplayer and earlier branches were not tested.”</div>
+
+      <h2>Turn the record into release notes</h2>
+      <p>Summarize the tested build, the important checks, known issues, and the limits of the test. Keep the source record so you can update the claim when the game or mod changes. Do not present a static package check as a gameplay result, and do not claim compatibility for versions you did not test.</p>
+
+      <section class="guide-cta" aria-labelledby="kit-heading">
+        <h2 id="kit-heading">Want editable templates?</h2>
+        <p>The <a href="store.html">Mod Release Evidence Kit</a> includes a release checklist, exact-build compatibility record, repeatable test log, issue report, release-notes template, and printable HTML checklist. It is $4.99 USD, delivered by email after payment confirmation.</p>
+        <p><strong>Disclosure:</strong> The kit is AI-assisted and its first edition has not been field-tested by a human mod author. It is an independent creator toolkit, not a certification or compatibility guarantee. Review and adapt it to your project.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
