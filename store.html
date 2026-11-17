@@ -1,2 +1,60 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Store — Delta Parker</title><link rel="stylesheet" href="styles.css"></head><body><div class="container">
-<a href="index.html">← Home</a><h1>Store</h1><p>Stores will be linked here (itch.io / Itch paid builds / future storefronts).</p></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A practical, game-agnostic kit for documenting mod compatibility, test evidence, and release notes.">
+  <title>Mod Release Evidence Kit — Delta Parker Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { min-height: 100vh; }
+    .store-shell { box-sizing: border-box; width: min(920px, 100%); margin: 0 auto; padding: 48px 22px 64px; }
+    .store-home { display: inline-block; margin-bottom: 28px; color: #ffc1c1; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .store-home:focus-visible, .buy-button:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+    .store-title { margin: 0 0 22px; color: #ff6666; font-size: clamp(2rem, 6vw, 3.2rem); }
+    .product-card { padding: clamp(22px, 5vw, 42px); border: 1px solid #744; border-radius: 16px; background: linear-gradient(145deg, #171313, #090909 70%); box-shadow: 0 16px 44px #0009; }
+    .product-kicker { margin: 0 0 10px; color: #ff9c9c; font-size: .9rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
+    .product-card h2 { margin: 0 0 14px; color: #fff; font-size: clamp(1.5rem, 4vw, 2.25rem); line-height: 1.18; }
+    .product-summary { max-width: 68ch; color: #e8e0e0; font-size: 1.1rem; line-height: 1.65; }
+    .product-card h3 { margin: 28px 0 10px; color: #ff8d8d; }
+    .product-card li { margin: 8px 0; color: #e8e0e0; line-height: 1.5; }
+    .price { margin: 30px 0 14px; color: white; font-size: 1.6rem; font-weight: 800; }
+    .buy-button { display: inline-block; padding: 14px 22px; border: 1px solid #ff7777; border-radius: 9px; background: #a00; color: #fff; font-size: 1.05rem; font-weight: 800; text-decoration: none; }
+    .buy-button:hover { background: #c11; }
+    .delivery, .disclosure { max-width: 72ch; color: #d8cccc; line-height: 1.6; }
+    .delivery strong, .disclosure strong { color: white; }
+    .disclosure { margin-top: 24px; padding-top: 18px; border-top: 1px solid #463838; font-size: .95rem; }
+    @media (max-width: 520px) { .store-shell { padding: 30px 16px 46px; } .buy-button { box-sizing: border-box; width: 100%; text-align: center; } }
+  </style>
+</head>
+<body>
+  <main class="store-shell">
+    <a class="store-home" href="index.html">← Delta Parker Productions</a>
+    <h1 class="store-title">Store</h1>
+    <article class="product-card">
+      <p class="product-kicker">Digital toolkit · Version 1.0.0</p>
+      <h2>Mod Release Evidence Kit</h2>
+      <p class="product-summary">Keep compatibility claims tied to the exact game build and the tests you actually ran. This game-agnostic kit helps independent mod authors record package checks, runtime sessions, evidence, known limits, and release notes.</p>
+
+      <h3>Inside the ZIP</h3>
+      <ul>
+        <li>Release checklist for ownership, package review, testing, evidence, and handoff</li>
+        <li>Compatibility record for one exact game build or branch</li>
+        <li>Repeatable test-session log and reproducible issue-report template</li>
+        <li>Release-notes template and evidence-backed compatibility-claim builder</li>
+        <li>Fictional static-only example and an offline printable HTML checklist</li>
+      </ul>
+
+      <h3>Format</h3>
+      <p class="product-summary">One ZIP with editable Markdown files and a printable HTML checklist. No game assets, mod code, or version-specific instructions are included.</p>
+
+      <p class="price">$4.99 USD</p>
+      <a class="buy-button" href="https://paypal.me/DustanParker177/4.99" target="_blank" rel="noopener noreferrer">Buy with PayPal</a>
+      <p class="delivery"><strong>Delivery:</strong> Pay through PayPal as a goods-and-services purchase. Add the email address for delivery in the payment note. After the payment is confirmed, the ZIP will be sent to that address. Do not use a friends-and-family transfer for a purchase.</p>
+
+      <p class="disclosure"><strong>Before you buy:</strong> This AI-assisted first edition has not been field-tested by a human mod author. It is an independent creator toolkit, not affiliated with a game publisher, and it does not certify or guarantee compatibility. Review and adapt the templates to your project.</p>
+    </article>
+  </main>
+</body>
+</html>
+
